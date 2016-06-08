@@ -1,0 +1,7 @@
+Initial plan for the paper:
+
+1-Classify the server status to 3 classification (Failed-Slow-Idle) based on google analytics data. And user's behavior in the system.
+2- Retrieve the facebook idata interactions between user's and program administrators in the above server status.
+3- Applied BIG 5 personality (Social tone analysis, emotion tone and language analytics) to observe the changes in these 3 different server status. (https://tone-analyzer-demo.mybluemix.net/)
+
+
