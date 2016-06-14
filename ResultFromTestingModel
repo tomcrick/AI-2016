@@ -1,0 +1,565 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     PersonalityEmotionServerStatusReady
+Instances:    391
+Attributes:   11
+              Openness
+              Conscientiousness
+              Extraversion
+              Agreeableness
+              Neuroticism
+              anger
+              disgust
+              fear
+              joy
+              sadness
+              serverStatus
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+Extraversion <= 0.021
+|   sadness <= 0.33839
+|   |   disgust <= 0.097073: No (5.0)
+|   |   disgust > 0.097073
+|   |   |   anger <= 0.352492: Yes (5.0)
+|   |   |   anger > 0.352492: No (4.0/1.0)
+|   sadness > 0.33839: No (20.0)
+Extraversion > 0.021
+|   joy <= 0.1223
+|   |   sadness <= 0.24537
+|   |   |   Extraversion <= 0.413
+|   |   |   |   anger <= 0.634244: Yes (11.0/1.0)
+|   |   |   |   anger > 0.634244
+|   |   |   |   |   anger <= 0.72857: No (6.0)
+|   |   |   |   |   anger > 0.72857
+|   |   |   |   |   |   Openness <= 0.542: Yes (6.0)
+|   |   |   |   |   |   Openness > 0.542: No (2.0)
+|   |   |   Extraversion > 0.413: Yes (11.0)
+|   |   sadness > 0.24537
+|   |   |   Openness <= 0.195: Yes (52.0/20.0)
+|   |   |   Openness > 0.195: No (98.0/33.0)
+|   joy > 0.1223: Yes (171.0/39.0)
+
+Number of Leaves  : 	12
+
+Size of the tree : 	23
+
+
+Time taken to build model: 0.01 seconds
+
+=== Predictions on test data ===
+
+    inst#     actual  predicted error prediction
+        1       1:No      2:Yes   +   0.967 
+        2       1:No      2:Yes   +   0.563 
+        3       1:No       1:No       0.824 
+        4       1:No      2:Yes   +   0.563 
+        5       1:No      2:Yes   +   0.563 
+        6       1:No      2:Yes   +   0.967 
+        7       1:No      2:Yes   +   0.967 
+        8       1:No      2:Yes   +   0.563 
+        9       1:No      2:Yes   +   0.772 
+       10       1:No      2:Yes   +   0.563 
+       11       1:No       1:No       0.824 
+       12       1:No      2:Yes   +   0.772 
+       13       1:No       1:No       0.824 
+       14       1:No       1:No       0.824 
+       15       1:No       1:No       1 
+       16       1:No       1:No       0.824 
+       17       1:No      2:Yes   +   0.772 
+       18      2:Yes      2:Yes       0.772 
+       19      2:Yes      2:Yes       0.772 
+       20      2:Yes      2:Yes       0.563 
+       21      2:Yes      2:Yes       0.772 
+       22      2:Yes      2:Yes       0.772 
+       23      2:Yes      2:Yes       0.563 
+       24      2:Yes      2:Yes       0.563 
+       25      2:Yes      2:Yes       0.563 
+       26      2:Yes       1:No   +   0.824 
+       27      2:Yes       1:No   +   0.824 
+       28      2:Yes      2:Yes       0.772 
+       29      2:Yes       1:No   +   0.824 
+       30      2:Yes      2:Yes       0.772 
+       31      2:Yes      2:Yes       1 
+       32      2:Yes      2:Yes       0.772 
+       33      2:Yes      2:Yes       0.563 
+       34      2:Yes      2:Yes       1 
+       35      2:Yes      2:Yes       0.772 
+       36      2:Yes       1:No   +   1 
+       37      2:Yes      2:Yes       0.772 
+       38      2:Yes      2:Yes       0.563 
+       39      2:Yes       1:No   +   0.824 
+       40      2:Yes      2:Yes       0.772 
+        1       1:No      2:Yes   +   0.814 
+        2       1:No       1:No       1 
+        3       1:No       1:No       0.857 
+        4       1:No       1:No       1 
+        5       1:No       1:No       1 
+        6       1:No       1:No       1 
+        7       1:No       1:No       0.688 
+        8       1:No      2:Yes   +   1 
+        9       1:No       1:No       1 
+       10       1:No      2:Yes   +   0.814 
+       11       1:No       1:No       1 
+       12       1:No       1:No       1 
+       13       1:No      2:Yes   +   1 
+       14       1:No       1:No       0.707 
+       15       1:No       1:No       0.688 
+       16       1:No      2:Yes   +   0.814 
+       17      2:Yes      2:Yes       0.875 
+       18      2:Yes      2:Yes       1 
+       19      2:Yes      2:Yes       1 
+       20      2:Yes      2:Yes       1 
+       21      2:Yes      2:Yes       1 
+       22      2:Yes       1:No   +   1 
+       23      2:Yes      2:Yes       0.814 
+       24      2:Yes       1:No   +   1 
+       25      2:Yes      2:Yes       0.875 
+       26      2:Yes      2:Yes       0.814 
+       27      2:Yes       1:No   +   0.707 
+       28      2:Yes       1:No   +   0.857 
+       29      2:Yes       1:No   +   1 
+       30      2:Yes      2:Yes       0.814 
+       31      2:Yes      2:Yes       1 
+       32      2:Yes      2:Yes       1 
+       33      2:Yes       1:No   +   0.688 
+       34      2:Yes       1:No   +   0.857 
+       35      2:Yes       1:No   +   0.688 
+       36      2:Yes       1:No   +   0.707 
+       37      2:Yes       1:No   +   0.707 
+       38      2:Yes       1:No   +   0.707 
+       39      2:Yes      2:Yes       0.814 
+        1       1:No       1:No       0.686 
+        2       1:No       1:No       0.686 
+        3       1:No      2:Yes   +   1 
+        4       1:No      2:Yes   +   0.77 
+        5       1:No      2:Yes   +   0.77 
+        6       1:No       1:No       0.667 
+        7       1:No      2:Yes   +   0.77 
+        8       1:No       1:No       0.686 
+        9       1:No      2:Yes   +   0.77 
+       10       1:No       1:No       0.686 
+       11       1:No      2:Yes   +   1 
+       12       1:No      2:Yes   +   1 
+       13       1:No       1:No       0.686 
+       14       1:No      2:Yes   +   0.77 
+       15       1:No       1:No       0.686 
+       16       1:No      2:Yes   +   0.72 
+       17      2:Yes      2:Yes       0.77 
+       18      2:Yes       1:No   +   0.686 
+       19      2:Yes       1:No   +   0.686 
+       20      2:Yes      2:Yes       0.77 
+       21      2:Yes       1:No   +   0.686 
+       22      2:Yes       1:No   +   0.833 
+       23      2:Yes      2:Yes       0.77 
+       24      2:Yes       1:No   +   0.686 
+       25      2:Yes       1:No   +   1 
+       26      2:Yes      2:Yes       1 
+       27      2:Yes       1:No   +   0.686 
+       28      2:Yes      2:Yes       0.72 
+       29      2:Yes      2:Yes       0.77 
+       30      2:Yes      2:Yes       0.77 
+       31      2:Yes       1:No   +   0.686 
+       32      2:Yes      2:Yes       0.77 
+       33      2:Yes      2:Yes       0.77 
+       34      2:Yes      2:Yes       0.77 
+       35      2:Yes      2:Yes       1 
+       36      2:Yes      2:Yes       0.77 
+       37      2:Yes       1:No   +   0.686 
+       38      2:Yes       1:No   +   0.686 
+       39      2:Yes      2:Yes       1 
+        1       1:No      2:Yes   +   0.524 
+        2       1:No      2:Yes   +   0.615 
+        3       1:No       1:No       1 
+        4       1:No      2:Yes   +   0.915 
+        5       1:No      2:Yes   +   0.615 
+        6       1:No       1:No       1 
+        7       1:No       1:No       1 
+        8       1:No      2:Yes   +   0.524 
+        9       1:No       1:No       1 
+       10       1:No      2:Yes   +   0.615 
+       11       1:No      2:Yes   +   0.524 
+       12       1:No       1:No       1 
+       13       1:No      2:Yes   +   0.615 
+       14       1:No      2:Yes   +   0.615 
+       15       1:No      2:Yes   +   0.615 
+       16       1:No      2:Yes   +   0.615 
+       17      2:Yes      2:Yes       0.615 
+       18      2:Yes      2:Yes       0.615 
+       19      2:Yes      2:Yes       0.915 
+       20      2:Yes      2:Yes       0.771 
+       21      2:Yes      2:Yes       0.615 
+       22      2:Yes      2:Yes       0.615 
+       23      2:Yes      2:Yes       0.615 
+       24      2:Yes      2:Yes       0.524 
+       25      2:Yes      2:Yes       0.771 
+       26      2:Yes      2:Yes       0.915 
+       27      2:Yes      2:Yes       0.771 
+       28      2:Yes      2:Yes       0.615 
+       29      2:Yes      2:Yes       0.615 
+       30      2:Yes      2:Yes       0.615 
+       31      2:Yes      2:Yes       0.771 
+       32      2:Yes      2:Yes       0.615 
+       33      2:Yes      2:Yes       0.524 
+       34      2:Yes      2:Yes       0.615 
+       35      2:Yes      2:Yes       0.615 
+       36      2:Yes      2:Yes       0.615 
+       37      2:Yes      2:Yes       0.615 
+       38      2:Yes       1:No   +   1 
+       39      2:Yes      2:Yes       0.771 
+        1       1:No      2:Yes   +   0.718 
+        2       1:No      2:Yes   +   0.794 
+        3       1:No       1:No       0.628 
+        4       1:No      2:Yes   +   0.718 
+        5       1:No       1:No       0.628 
+        6       1:No      2:Yes   +   0.718 
+        7       1:No       1:No       0.929 
+        8       1:No      2:Yes   +   0.718 
+        9       1:No      2:Yes   +   0.794 
+       10       1:No       1:No       0.548 
+       11       1:No       1:No       0.628 
+       12       1:No      2:Yes   +   0.794 
+       13       1:No       1:No       0.929 
+       14       1:No       1:No       0.966 
+       15       1:No       1:No       0.929 
+       16       1:No      2:Yes   +   0.718 
+       17      2:Yes      2:Yes       0.718 
+       18      2:Yes      2:Yes       0.794 
+       19      2:Yes       1:No   +   0.628 
+       20      2:Yes      2:Yes       0.718 
+       21      2:Yes      2:Yes       0.718 
+       22      2:Yes      2:Yes       0.794 
+       23      2:Yes      2:Yes       0.794 
+       24      2:Yes      2:Yes       0.794 
+       25      2:Yes      2:Yes       0.718 
+       26      2:Yes       1:No   +   0.548 
+       27      2:Yes       1:No   +   0.628 
+       28      2:Yes      2:Yes       0.718 
+       29      2:Yes      2:Yes       0.718 
+       30      2:Yes      2:Yes       0.718 
+       31      2:Yes       1:No   +   0.548 
+       32      2:Yes      2:Yes       0.794 
+       33      2:Yes      2:Yes       0.794 
+       34      2:Yes      2:Yes       0.794 
+       35      2:Yes      2:Yes       0.718 
+       36      2:Yes      2:Yes       0.794 
+       37      2:Yes      2:Yes       0.718 
+       38      2:Yes      2:Yes       0.794 
+       39      2:Yes       1:No   +   0.628 
+        1       1:No       1:No       0.875 
+        2       1:No      2:Yes   +   0.635 
+        3       1:No      2:Yes   +   0.635 
+        4       1:No      2:Yes   +   0.768 
+        5       1:No       1:No       1 
+        6       1:No       1:No       0.875 
+        7       1:No      2:Yes   +   0.768 
+        8       1:No      2:Yes   +   0.635 
+        9       1:No       1:No       1 
+       10       1:No       1:No       0.636 
+       11       1:No       1:No       1 
+       12       1:No       1:No       0.636 
+       13       1:No       1:No       0.875 
+       14       1:No       1:No       1 
+       15       1:No       1:No       0.875 
+       16       1:No      2:Yes   +   0.768 
+       17      2:Yes      2:Yes       0.635 
+       18      2:Yes       1:No   +   1 
+       19      2:Yes      2:Yes       0.768 
+       20      2:Yes      2:Yes       0.768 
+       21      2:Yes      2:Yes       0.768 
+       22      2:Yes       1:No   +   1 
+       23      2:Yes      2:Yes       0.635 
+       24      2:Yes      2:Yes       1 
+       25      2:Yes       1:No   +   0.875 
+       26      2:Yes      2:Yes       0.768 
+       27      2:Yes       1:No   +   0.875 
+       28      2:Yes      2:Yes       0.75 
+       29      2:Yes      2:Yes       0.768 
+       30      2:Yes      2:Yes       0.768 
+       31      2:Yes      2:Yes       0.768 
+       32      2:Yes      2:Yes       0.768 
+       33      2:Yes       1:No   +   1 
+       34      2:Yes      2:Yes       0.768 
+       35      2:Yes      2:Yes       0.768 
+       36      2:Yes      2:Yes       0.768 
+       37      2:Yes      2:Yes       0.768 
+       38      2:Yes      2:Yes       0.768 
+       39      2:Yes       1:No   +   0.636 
+        1       1:No      2:Yes   +   0.75 
+        2       1:No      2:Yes   +   0.753 
+        3       1:No      2:Yes   +   0.753 
+        4       1:No      2:Yes   +   0.753 
+        5       1:No      2:Yes   +   0.753 
+        6       1:No      2:Yes   +   0.753 
+        7       1:No      2:Yes   +   0.753 
+        8       1:No       1:No       0.623 
+        9       1:No      2:Yes   +   0.75 
+       10       1:No      2:Yes   +   0.753 
+       11       1:No       1:No       0.623 
+       12       1:No       1:No       0.623 
+       13       1:No       1:No       0.623 
+       14       1:No       1:No       0.623 
+       15       1:No      2:Yes   +   0.753 
+       16       1:No      2:Yes   +   0.753 
+       17      2:Yes      2:Yes       0.753 
+       18      2:Yes       1:No   +   0.623 
+       19      2:Yes      2:Yes       0.753 
+       20      2:Yes       1:No   +   0.623 
+       21      2:Yes       1:No   +   0.623 
+       22      2:Yes       1:No   +   0.623 
+       23      2:Yes      2:Yes       0.753 
+       24      2:Yes      2:Yes       0.75 
+       25      2:Yes      2:Yes       0.753 
+       26      2:Yes      2:Yes       0.75 
+       27      2:Yes       1:No   +   0.623 
+       28      2:Yes       1:No   +   0.623 
+       29      2:Yes      2:Yes       0.753 
+       30      2:Yes      2:Yes       0.753 
+       31      2:Yes       1:No   +   0.623 
+       32      2:Yes      2:Yes       0.753 
+       33      2:Yes      2:Yes       0.753 
+       34      2:Yes      2:Yes       0.753 
+       35      2:Yes      2:Yes       0.753 
+       36      2:Yes      2:Yes       0.753 
+       37      2:Yes      2:Yes       0.753 
+       38      2:Yes       1:No   +   0.623 
+       39      2:Yes      2:Yes       0.75 
+        1       1:No      2:Yes   +   0.839 
+        2       1:No      2:Yes   +   0.839 
+        3       1:No      2:Yes   +   0.833 
+        4       1:No      2:Yes   +   0.839 
+        5       1:No       1:No       0.833 
+        6       1:No      2:Yes   +   0.833 
+        7       1:No      2:Yes   +   0.833 
+        8       1:No      2:Yes   +   0.923 
+        9       1:No      2:Yes   +   0.839 
+       10       1:No       1:No       1 
+       11       1:No       1:No       0.644 
+       12       1:No      2:Yes   +   0.667 
+       13       1:No       1:No       0.644 
+       14       1:No      2:Yes   +   0.833 
+       15       1:No      2:Yes   +   0.923 
+       16       1:No       1:No       0.644 
+       17      2:Yes      2:Yes       0.833 
+       18      2:Yes      2:Yes       0.839 
+       19      2:Yes      2:Yes       0.839 
+       20      2:Yes      2:Yes       0.833 
+       21      2:Yes      2:Yes       0.833 
+       22      2:Yes       1:No   +   0.644 
+       23      2:Yes      2:Yes       0.839 
+       24      2:Yes      2:Yes       0.765 
+       25      2:Yes      2:Yes       0.839 
+       26      2:Yes      2:Yes       0.839 
+       27      2:Yes      2:Yes       0.833 
+       28      2:Yes       1:No   +   0.644 
+       29      2:Yes      2:Yes       0.839 
+       30      2:Yes      2:Yes       0.765 
+       31      2:Yes      2:Yes       0.833 
+       32      2:Yes      2:Yes       0.839 
+       33      2:Yes      2:Yes       0.839 
+       34      2:Yes      2:Yes       0.839 
+       35      2:Yes      2:Yes       0.833 
+       36      2:Yes      2:Yes       0.923 
+       37      2:Yes      2:Yes       0.839 
+       38      2:Yes      2:Yes       0.833 
+       39      2:Yes      2:Yes       0.839 
+        1       1:No      2:Yes   +   0.711 
+        2       1:No       1:No       0.736 
+        3       1:No       1:No       0.736 
+        4       1:No      2:Yes   +   0.711 
+        5       1:No      2:Yes   +   0.817 
+        6       1:No      2:Yes   +   0.711 
+        7       1:No      2:Yes   +   0.817 
+        8       1:No      2:Yes   +   0.817 
+        9       1:No      2:Yes   +   0.711 
+       10       1:No      2:Yes   +   0.817 
+       11       1:No      2:Yes   +   0.711 
+       12       1:No      2:Yes   +   0.711 
+       13       1:No      2:Yes   +   0.711 
+       14       1:No      2:Yes   +   0.817 
+       15       1:No      2:Yes   +   0.711 
+       16       1:No       1:No       0.8 
+       17      2:Yes      2:Yes       0.817 
+       18      2:Yes      2:Yes       0.817 
+       19      2:Yes       1:No   +   0.595 
+       20      2:Yes       1:No   +   0.595 
+       21      2:Yes       1:No   +   0.736 
+       22      2:Yes       1:No   +   0.736 
+       23      2:Yes      2:Yes       0.711 
+       24      2:Yes      2:Yes       0.817 
+       25      2:Yes      2:Yes       0.711 
+       26      2:Yes       1:No   +   0.595 
+       27      2:Yes      2:Yes       0.711 
+       28      2:Yes       1:No   +   0.736 
+       29      2:Yes      2:Yes       0.711 
+       30      2:Yes      2:Yes       0.711 
+       31      2:Yes      2:Yes       0.817 
+       32      2:Yes      2:Yes       0.711 
+       33      2:Yes      2:Yes       0.711 
+       34      2:Yes      2:Yes       0.711 
+       35      2:Yes      2:Yes       0.711 
+       36      2:Yes      2:Yes       0.817 
+       37      2:Yes      2:Yes       0.711 
+       38      2:Yes      2:Yes       0.817 
+       39      2:Yes      2:Yes       0.817 
+        1       1:No      2:Yes   +   0.744 
+        2       1:No      2:Yes   +   0.744 
+        3       1:No       1:No       0.958 
+        4       1:No      2:Yes   +   0.744 
+        5       1:No       1:No       0.581 
+        6       1:No      2:Yes   +   0.744 
+        7       1:No      2:Yes   +   0.744 
+        8       1:No       1:No       0.958 
+        9       1:No      2:Yes   +   0.744 
+       10       1:No      2:Yes   +   0.744 
+       11       1:No      2:Yes   +   0.744 
+       12       1:No      2:Yes   +   0.744 
+       13       1:No      2:Yes   +   0.744 
+       14       1:No      2:Yes   +   0.744 
+       15       1:No      2:Yes   +   0.744 
+       16       1:No      2:Yes   +   0.744 
+       17      2:Yes      2:Yes       0.744 
+       18      2:Yes      2:Yes       0.744 
+       19      2:Yes      2:Yes       0.744 
+       20      2:Yes       1:No   +   0.581 
+       21      2:Yes      2:Yes       0.744 
+       22      2:Yes       1:No   +   0.581 
+       23      2:Yes      2:Yes       0.744 
+       24      2:Yes       1:No   +   0.581 
+       25      2:Yes      2:Yes       0.744 
+       26      2:Yes      2:Yes       0.744 
+       27      2:Yes       1:No   +   0.581 
+       28      2:Yes       1:No   +   0.581 
+       29      2:Yes      2:Yes       0.744 
+       30      2:Yes      2:Yes       0.744 
+       31      2:Yes       1:No   +   1 
+       32      2:Yes      2:Yes       0.744 
+       33      2:Yes      2:Yes       0.8 
+       34      2:Yes      2:Yes       0.744 
+       35      2:Yes      2:Yes       0.744 
+       36      2:Yes      2:Yes       0.744 
+       37      2:Yes      2:Yes       0.744 
+       38      2:Yes      2:Yes       0.744 
+       39      2:Yes      2:Yes       0.744 
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         233               59.5908 %
+Incorrectly Classified Instances       158               40.4092 %
+Kappa statistic                          0.1352
+Mean absolute error                      0.4326
+Root mean squared error                  0.5182
+Relative absolute error                 89.2809 %
+Root relative squared error            105.3007 %
+Total Number of Instances              391     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.391    0.261    0.512      0.391    0.444      0.138    0.605     0.523     No
+                 0.739    0.609    0.634      0.739    0.683      0.138    0.605     0.652     Yes
+Weighted Avg.    0.596    0.465    0.584      0.596    0.584      0.138    0.605     0.599     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  63  98 |   a = No
+  60 170 |   b = Yes
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     testingSet4
+Instances:     unknown (yet). Reading incrementally
+Attributes:   11
+
+=== Predictions on user test set ===
+
+    inst#     actual  predicted error prediction
+        1      1:Yes       2:No   +   0.909 
+        2      1:Yes       2:No   +   0.772 
+        3      1:Yes       2:No   +   0.772 
+        4      1:Yes       2:No   +   0.772 
+        5      1:Yes       2:No   +   0.615 
+        6      1:Yes       2:No   +   0.772 
+        7      1:Yes       2:No   +   0.772 
+        8      1:Yes       2:No   +   0.772 
+        9      1:Yes       2:No   +   0.772 
+       10      1:Yes      1:Yes       0.663 
+       11      1:Yes       2:No   +   0.772 
+       12      1:Yes       2:No   +   0.772 
+       13      1:Yes       2:No   +   0.909 
+       14      1:Yes       2:No   +   1 
+       15      1:Yes       2:No   +   0.772 
+       16      1:Yes       2:No   +   0.772 
+       17       2:No      1:Yes   +   0.663 
+       18       2:No      1:Yes   +   0.663 
+       19       2:No       2:No       0.772 
+       20       2:No      1:Yes   +   1 
+       21       2:No      1:Yes   +   0.663 
+       22       2:No       2:No       0.772 
+       23       2:No      1:Yes   +   0.663 
+       24       2:No       2:No       0.772 
+       25       2:No      1:Yes   +   0.663 
+       26       2:No       2:No       0.772 
+       27       2:No      1:Yes   +   0.663 
+       28       2:No      1:Yes   +   0.663 
+       29       2:No      1:Yes   +   0.663 
+       30       2:No       2:No       0.772 
+       31       2:No      1:Yes   +   0.663 
+       32       2:No      1:Yes   +   1 
+       33       2:No       2:No       0.772 
+       34       2:No       2:No       0.772 
+       35       2:No       2:No       0.615 
+       36       2:No      1:Yes   +   0.663 
+       37       2:No      1:Yes   +   0.75 
+       38       2:No      1:Yes   +   1 
+       39       2:No      1:Yes   +   0.663 
+       40       2:No      1:Yes   +   1 
+       41       2:No       2:No       0.772 
+       42       2:No       2:No       0.615 
+       43       2:No       2:No       0.615 
+       44       2:No      1:Yes   +   1 
+       45       2:No      1:Yes   +   0.663 
+       46       2:No      1:Yes   +   1 
+       47       2:No       2:No       0.772 
+       48       2:No      1:Yes   +   0.663 
+       49       2:No      1:Yes   +   0.663 
+       50       2:No       2:No       0.772 
+       51      1:Yes       2:No   +   1 
+       52      1:Yes       2:No   +   0.772 
+       53      1:Yes       2:No   +   1 
+       54      1:Yes       2:No   +   0.772 
+       55      1:Yes       2:No   +   0.772 
+       56      1:Yes       2:No   +   0.772 
+       57      1:Yes       2:No   +   0.615 
+
+=== Summary ===
+
+Correctly Classified Instances          43               75.4386 %
+Incorrectly Classified Instances        14               24.5614 %
+Kappa statistic                          0.5295
+Mean absolute error                      0.3432
+Root mean squared error                  0.4246
+Total Number of Instances               57     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.618    0.043    0.955      0.618    0.750      0.579    0.849     0.870     No
+                 0.957    0.382    0.629      0.957    0.759      0.579    0.849     0.727     Yes
+Weighted Avg.    0.754    0.180    0.823      0.754    0.753      0.579    0.849     0.812     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 21 13 |  a = No
+  1 22 |  b = Yes
+
