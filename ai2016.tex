@@ -34,15 +34,19 @@
 
 \begin{document}
 
-\title*{Title TBC}
+\title*{Incorporating emotion and personality-based analysis in user-centered modelling}
 % Use \titlerunning{Short Title} for an abbreviated version of
 % your contribution title if the original one is too long
-\author{Mohamed Mostafa, Tom Crick and Ana C. Calderon}
+\author{Mohamed Mostafa \and Ana C. Calderon \and Tom Crick \and Giles Oatley}
 % Use \authorrunning{Short Title} for an abbreviated version of
 % your contribution title if the original one is too long
-\institute{Mohamed Mostafa, Tom Crick and Ana C. Calderon \at
+\institute{Mohamed Mostafa \and Ana C. Calderon \and Tom Crick\at
   Department of Computing \& Information Systems, Cardiff Metropolitan
-  University, Cardiff CF5 2YB, UK; \email{{momostafa,tcrick,acalderon}@cardiffmet.ac.uk}}
+  University, Cardiff, UK;
+  \email{{momostafa,acalderon,tcrick}@cardiffmet.ac.uk}
+\and
+Giles Oatley \at School of Engineering \& Information Technology,
+Murdoch University, Australia;\\\email{g.oatley@murdoch.edu.au}}
 %
 % Use the package "url.sty" to avoid
 % problems with special characters
@@ -50,10 +54,81 @@
 %
 \maketitle
 
-\abstract*{Abstract here...}
+\abstract{Understanding user behaviour under varying conditions,
+scenarios and journeys is fundamental to the improvement of the
+user-experience for a given system. Predictive models of user
+reactions and responses can aid in the design of more intuitive and
+usable systems. The research presented in this paper correlates events
+and interactions in an online social network against user behaviour,
+focusing on personality traits. Emotional context and tone is analysed
+and modelled based on varying types of sentiments that users express
+in their language using the IBM Watson Developer Cloud tools. The data
+collected in this study thus provides further significant evidence
+towards supporting the hypothesis that analysing and modelling
+emotions, sentiments and personality traits provides valuable insight
+into improving the user experience of complex social computer
+systems.}
+
+% Keywords: emotions; human computer interactions; social media;
+% artificial intelligence; social analysis; affective computing.
+
+
 
 \section{Introduction}\label{intro}
-Test cite~\citep{oatley-et-al-soccogcomp2015}
+
+As computer system applications become more complex, with more complex
+demands of ever more intuitive human-application interaction, research
+in predicting and understanding user behaviour, applied to particular
+systems becomes ever more important, impacting elements of daily
+societal life, both professionally and personally. Understanding user
+behavior, during particular events, leads to a more informed
+predictive model, thus allowing the construction of more intuitive
+interfaces and a better user experience. Our work, based on
+psycholinguistics science, aims to understand whether the words we use
+in our daily life reflect our personalities and what we
+fell. Psycholinguistics is a well established and active research
+field, and it widely accepted that written text can reflect more than
+words, it conveys emotion and personality traits.
+
+In this paper the IBM Watson tone analyzer have been used to identify
+emotion tones in the text, the research in this area has shown a
+strong correlation between the word choice and personality, emotions,
+attitude and thought process. This provides further evidence that it
+is possible to profile users’ identity Fast and Funder (2008). Most of
+the work based on the Linguistic Inquiry and Word Count (LIWC)
+psycholinguistics dictionary Tausczik \& Pennebaker, 2010, and
+Pennebaker et al., 2007. The LIWC is used to find psychologically
+meaningful word categories from word usage in writing.
+
+\section{Methodology}\label{method}
+
+\subsection{Dataset}
+
+Social media has been used in varying computer system approaches,
+varying from sharing and gathering of information and data, to
+catering for marketing and business needs. Furthermore, it is also
+used as technical support for computer system platforms (Thompson,
+2009). 
+
+% Fig1 here ***
+
+According to a survey conducted by Bob Thompson (2009) more than 60\%,
+agrees with the statement that social media have been used as a
+technical support for posting technical issues for computer system
+(Figure 1). Our data set was generated from interactions between users
+and complex scholarship system for EU funds. The whole set consists of
+391 users and 1390 comment posted by users as response to system
+status and reporting their experience with the system.
+
+Google analytics have been installed in the web application to track
+user’s behavior and web pages’ impressions, however, the data from
+Google analytics have been used to identify the server’s status and
+divided the status to two stages idle, where system had higher number
+of sessions and system marked as failure where system had a lower
+session engaged. As shown in Figure 2, is an screen shot of google
+analytic in one day and clearly shows the drop at 8 pm where the
+system has been identified as failure.
+
 
 
 % \begin{acknowledgement}
