@@ -95,10 +95,11 @@ emotion tones in the text, the research in this area has shown a
 strong correlation between the word choice and personality, emotions,
 attitude and thought process. This provides further evidence that it
 is possible to profile users’ identity Fast and Funder (2008). Most of
-the work based on the Linguistic Inquiry and Word Count (LIWC)
-psycholinguistics dictionary Tausczik \& Pennebaker, 2010, and
-Pennebaker et al., 2007. The LIWC is used to find psychologically
-meaningful word categories from word usage in writing.
+the work based on the {\emph{Linguistic Inquiry and Word Count}}
+(LIWC) psycholinguistics
+dictionary~\citep{pennebaker-et-al:2001,tausczik+pennebaker:2010}.
+LIWC is used to find psychologically meaningful word categories from
+word usage in writing.
 
 \section{Methodology}\label{method}
 
@@ -107,20 +108,26 @@ meaningful word categories from word usage in writing.
 Social media has been used in varying computer system approaches,
 varying from sharing and gathering of information and data, to
 catering for marketing and business needs. Furthermore, it is also
-used as technical support for computer system platforms (Thompson,
-2009). 
+used as technical support for computer system
+platforms~\citep{thompson:2009}.
 
-% Fig1 here ***
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{images/socialmediause}
+\caption{US consumer preferences for company usage of social media~\citep{thompson:2009}}
+\label{fig:socialmediause} 
+\end{figure}
 
-According to a survey conducted by Bob Thompson (2009) more than 60\%,
+According to a survey in 2009~\citep{thompson:2009}, more than 60\%,
 agrees with the statement that social media have been used as a
 technical support for posting technical issues for computer system
-(Figure 1). Our data set was generated from interactions between users
-and complex scholarship system for EU funds. The whole set consists of
-391 users and 1390 comment posted by users as response to system
-status and reporting their experience with the system.
+(see Figure~\ref{fig:socialmediause}). Our data set was generated from
+interactions between users and complex scholarship system for EU
+funds. The whole set consists of 391 users and 1390 comment posted by
+users as response to system status and reporting their experience with
+the system.
 
-Google analytics have been installed in the web application to track
+Google Analytics have been installed in the web application to track
 user’s behavior and web pages’ impressions, however, the data from
 Google analytics have been used to identify the server’s status and
 divided the status to two stages idle, where system had higher number
@@ -129,7 +136,124 @@ session engaged. As shown in Figure 2, is an screen shot of google
 analytic in one day and clearly shows the drop at 8 pm where the
 system has been identified as failure.
 
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{images/googleanalytics}
+\caption{Google Analytics profile shows behaviour of the system over a
+  24 hour period (timeline during the day vs. number of active sessions)}
+\label{fig:googleanalytics} 
+\end{figure}
 
+\subsection{Personality Insight}
+
+Big Five personality traits (McCrae and John 175-215, 1992) is one of
+the most popular models for generally identify how a person is
+responsive in the social life. The model, based on the lexical
+hypothesis (Crownie 2007), focuses on five dimensions (Digman, J.M,
+1990):
+
+\begin{itemize}
+\item {\emph{Agreeableness}} is a person's inclination to be humane
+  and helpful toward others;
+\item {\emph{Conscientiousness}} is a person's being welling to the
+  tasks well and in an efficient organised way;
+\item {\emph{Extraversion}} is a person's level of socialisation and
+  enjoyment of being around people, the higher value means sociable
+  person, lower value means person's rather to be alone;
+\item {\emph{Neuroticism}} is a person's level to express some
+  negative emotions such as anger and stress.
+\item {\emph{Openness}} is the measurement of person's level to try
+  new things, adventure, imagination.
+\end{itemize}
+
+\subsection{Emotion Tones}
+
+The IBM Watson tone analyzer based on Social emotion tones that are being
+derived from a research on Emotion Analysis, which is an ensemble
+framework to infer emotions from a given text. To derive emotion
+scores from text, IBM uses a stacked generalisation-based ensemble
+framework to achieve greater predictive accuracy (Costa, Paul T,
+1992). Features such as n-grams (unigrams, bigrams and trigrams),
+punctuation, emoticons, curse words, greeting words (such as hello,
+hi, and thanks), and sentiment polarity are fed into state-of-the
+machine learning algorithms to classify emotion categories (Fellbaum,
+2005).
+
+Most of these prior works are based on the Linguistic Inquiry and Word
+Count (LIWC) psycholinguistics dictionary (Tausczik \& Pennebaker,
+2010), and (Pennebaker et al., 2007.) The LIWC is used to find
+psychologically meaningful word categories from word usage in writing.
+
+
+\section{Data Analysis \& Feature Extraction}
+
+\subsection{Overview of the Data}
+
+All interactions have been gathered and grouped by server status and
+applied IBM Watson algorithm to fetch the emotion social tone for an
+overview of the system behavior and user’s corresponding’s with
+Facebook in same time. Figure~\ref{fig:emotiontone} shows the
+relationship between the server behavior and emotions of the users, in
+the system failed status shows significate difference in overall anger
+in different status, furthermore, the Joy parameter shows a
+significate difference in system working idle and failure status,
+however fear and sadness parameters is almost the same even with the
+system idle and working in stable stage.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{images/emotiontone}
+\caption{Overall emotion tone response to server failure/idle status}
+\label{fig:emotiontone} 
+\end{figure}
+
+Identifying user’s personality based on the Facebook interaction
+analysis, by applying IBM Watson personality insight tool, by
+gathering all comments from user. However, some user’s in the data set
+had undertaken the BIG Five (44 questionnaire), in this case these
+values have been used instead.
+
+Second stage was grouping the comments based on server status and
+segment these interactions by user, to investigate the impact of
+server status in the emotion of the user and investigate the BIG Five
+dimension as constant parameter.
+
+Investigating the relationship between personality trait dimension and
+the social emotion tones, to find the highest correlation to identify
+the key elements of the potential model. Applying the linear
+regression and Pearson correlation. Building a neural network
+multilayer perception using the potential key elements with higher
+correlations.
+
+The previous overview encourages more investigation to understand the
+relationship between user’s behavior and computer system
+behavior’s. The data collected from the social media interactions have
+been grouped by users and IBM Watson Personality Insights have been
+used to identify BIG Five personality traits for each user. Using IBM
+Watson Tone Analyzer, the data been grouped by user’s comments and
+server status (failure, idle) to identify user’s social emotion tone
+for each user. Table 2, shows sample of data used in the analysis,
+while each row represents a separate user, each column represents BIG
+5 traits, Social Emotion Tones and Server status. 
+
+\subsection{Statistical Analysis}
+
+The aim of this paper is to model the user’s responsive behavior, one
+of the approaches to build a conceptual framework model is to apply
+linear regression in Investigating the relationship between BIG 5
+personality dimensions and the emotion tones features. 
+
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.45\columnwidth]{images/opennessplot.png}
+\includegraphics[width=0.45\columnwidth]{images/extraversionplot.png}\\
+\includegraphics[width=0.45\columnwidth]{images/conscientiousnessplot.png}
+\includegraphics[width=0.45\columnwidth]{images/neuroticismplot.png}\\
+\includegraphics[width=0.45\columnwidth]{images/agreeablenessplot.png}
+\caption{Scatterplots of dependent variables of BIG Five dimension and Independent variables are social emotion tones}
+\label{fig:scatterplots} 
+\end{figure}
 
 % \begin{acknowledgement}
 % If you want to include acknowledgments of assistance and the like at the end of an individual chapter please use the \verb|acknowledgement| environment -- it will automatically render Springer's preferred layout.
