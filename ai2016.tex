@@ -15,6 +15,8 @@
                              % when including figure files
 \usepackage{multicol}        % used for the two-column index
 \usepackage[bottom]{footmisc}% places footnotes at page bottom
+\usepackage{tabularx}
+\usepackage{booktabs}
 \usepackage{url}
 \urlstyle{same}
 
@@ -29,6 +31,10 @@
 \makeindex             % used for the subject index
                        % please use the style svind.ist with
                        % your makeindex program
+
+
+% fix table columns
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -254,6 +260,187 @@ personality dimensions and the emotion tones features.
 \caption{Scatterplots of dependent variables of BIG Five dimension and Independent variables are social emotion tones}
 \label{fig:scatterplots} 
 \end{figure}
+
+% \begin{table}
+% \centering
+% \begin{tabularx}{\columnwidth}{l Y Y Y Y Y Y Y Y Y Y}
+% %\begin{tabular}{c c c} 
+% \hline
+% & Openness & Extraversion & Consciousness & Agreeableness & Neuroticism\\ 
+% \hline
+% %\end{tabular}
+% \end{tabularx}
+% \caption{}
+
+%\end{table}
+
+
+\begin{table}[!ht]
+\centering
+\resizebox{\columnwidth}{!}{%
+
+\begin{tabular}{@{}llll|lll|lll|lll|lll@{}}
+%\begin{tabularx}{\textwidth}{llll|lll|lll|lll|lll}
+\toprule
+& \multicolumn{3}{c}{Openness} & \multicolumn{3}{c}{Extraversion} &
+\multicolumn{3}{c}{Conscientiousness} &
+\multicolumn{3}{c}{Agreeableness} & \multicolumn{3}{c}{Neuroticism} \\
+
+\midrule
+           
+& \multicolumn{1}{c}{B} & \multicolumn{1}{c}{t} &
+\multicolumn{1}{c}{Sig} & \multicolumn{1}{c}{B} &
+\multicolumn{1}{c}{t} & \multicolumn{1}{c}{Sig} &
+\multicolumn{1}{c}{B} & \multicolumn{1}{c}{t} &
+\multicolumn{1}{c}{Sig} & \multicolumn{1}{c}{B} &
+\multicolumn{1}{c}{t} & \multicolumn{1}{c}{Sig} &
+\multicolumn{1}{c}{B} & \multicolumn{1}{c}{t} &
+\multicolumn{1}{c}{Sig} \\
+
+
+(constant) & 0.356                 & 3.282                 & 0.001                   & 0.162                 & 1.642                 & 0.101                   & 0.16                  & 1.623                 & 0.105                   & 0.297      & 2.831     & 0.005    & 0.828          & 9.934   & 0      \\
+anger      & -0.063                & -0.735                & 0.463                   & 0.064                 & 0.831                 & 0.406                   & 0.124                 & 1.592                 & 0.112                   & 0.024      & 0.293     & 0.769    & 0.116          & 1.767    & 0.078     \\
+disgust    & 0.478                 & 4.354                 & 0                       & 0.114                 & 1.142                 & 0.253                   & 0.255                 & 2.551                 & 0.011                   & -0.061     & -0.574    & 0.566    & -0.363         & -4.303    & 0    \\
+fear       & 0.065                 & 0.534                 & 0.594                   & 0.172                 & 1.549                 & 0.122                   & 0.04                  & 0.356                 & 0.722                   & 0.093      & 0.783     & 0.434    & -0.023         & -0.241    & 0.81    \\
+joy        & 0.066                 & 0.561                 & 0.575                   & 0.446                 & 4.179                 & 0                       & 0.436                 & 4.058                 & 0                       & 0.188      & 1.652     & 0.099    & -0.487         & -5.39   & 0      \\
+sadness    & -0.226                & -2.118                & 0.035                   & -0.185                & -1.906                & 0.057                   & -0.03                 & -0.313                & 0.754                   & 0.014      & 0.132     & 0.895    & 0.233          & 2.841     & 0.005    \\
+
+\bottomrule
+
+%\end{tabularx} 
+\end{tabular}%
+}
+\caption{Linear regression coefficients}
+\label{tbl:linreg}
+\end{table}
+
+Linear regression does not show high signification correlation between
+(Figure~\ref{fig:scatterplots} and Table~\ref{tbl:linreg}) BIG Five
+dimension and Social emotion tones, however, there some correlations
+can be highlighted and used as key elements for the model at this
+stage. Openness and Disgust, is 0.479 correlation
+variable. Extraversion and Joy is 0.446 correlation and P-Value is 0
+which shows a reasonable correlation. Conscientiousness and Joy with
+0.436 correlation and Disgust with 0.255. Agreeableness, does not have
+a high impact in the social emotion parameters the highest correlation
+is 0.188 with Joy, which can be neglected as an input to the
+model. Neuroticism and Disgust -0.363, Joy -0.487 and p-value is zero
+is both cases, and Sadness with 0.233. All correlation values $<$ 0.5
+however, it is notice that Agreeableness does not have a linear
+relationship with any of the social emotion tones, furthermore, the
+social emotion tones that have a potential linear relationship are
+Disgust, Joy and Sadness since the three tones have a correlation
+between $>$ 0.3 and $<$ 0.5.
+
+Previous linear regression analysis suggested that BIG Five dimensions
+(Openness, Extraversion, Conscientiousness and Neuroticism) has the
+highest correlation with the Social emotion tones (Joy, Sadness and
+Disgust). For further analysis, Pearson Correlation implemented in
+same data set to compare the output between Pearson correlation and
+Linear Regression correlation. Table 2 shows Pearson
+correlation. There is no significate correlation in both, however, in
+Pearson correlation, Neuroticism has the highest correlation values
+across emotion tones, specially (Anger, Joy and Sadness). Joy as
+social emotion tones does have a correlation with all BIG Five
+dimensions expect for Agreeableness which agrees with the previous
+analysis. However, Disgust as social emotion tone does not have a
+strong correlation with any of the BIG Five dimensions which is
+different from previous analysis. 
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{@{}llllll@{}}
+\toprule
+                  & Anger  & Disgust & Fear   & Joy    & Sadness \\ 
+\midrule
+Openness          & -0.098 & 0.231   & 0.043  & 0.035  & -0.151  \\
+Conscientiousness & -0.111 & -0.001  & -0.113 & 0.267  & -0.19   \\
+Extraversion      & -0.175 & -0.077  & -0.071 & 0.349  & -0.291  \\
+Agreeableness     & -0.068 & -0.089  & -0.027 & 0.14   & -0.069  \\
+Neuroticism       & 0.375  & -0.037  & 0.153  & -0.488 & 0.379   \\ 
+
+\bottomrule
+\end{tabular}
+\caption{Pearson correlations}
+\label{tab:pearson}
+\end{table}
+
+
+\subsection{Key Elements of the Model}
+
+According to the output of previous two analysis Linear Regression and
+Pearson Correlation, the dimension to be identified as the key
+elements from the personality traits are (Openness, Extraversion,
+Conscientiousness and Neuroticism), the two analysis agrees the
+Agreeableness does not have a significate correlation across any
+social emotion tone. However, for the social emotion tones to be used
+key input elements for the proposed model are (Joy, Sadness, Anger and
+Disgust) although Anger tone did not show any significate correlation
+in linear regression analysis, however, value of the Pearson
+correlation coefficient between 0.3 and 0.5 which can be used as input
+for the model.
+
+% insert table 3
+
+The data set used to build this model is consisting of 391 users and 8
+inputs (Openness, Extraversion, Conscientiousness, Neuroticism, Joy,
+Sadness, Anger and Disgust), the class/output variable is the server
+status while (No: System Failed) and (Yes: System idle). The total
+number of the instances for testing set is 57. The output of the model
+shows a 75.44\% corrected predicted instances and 24.56\% incorrectly
+classified instances. The output date encourages more analysis and
+research in same direction with expanding the data set.
+
+
+
+\section{Conclusions and Future Work}\label{conclusions}
+
+This paper represents an ongoing research (Oatley, T. Crick and
+M. Mostafa, 2015) in an attempt to profile user’s digital behavior,
+where authors believes that this will help to improve users experience
+and computer system architecture. Nowadays, social media is not only
+used as sharing platform, it is also used as technical support
+platform for various of different computer applications and service
+provided. This paper demonstrates the analysis of one of the
+web-application platform that have been used Facebook as technical
+support platform for their users, and during the usage of the system a
+Google analytics used to identify the status of the system in order to
+group interactions into two different set one where the system was
+idle and the other one where system were failed.
+
+Social network, provided a pool of data for researches to analysis,
+through availability of text as raw data provided by social networks,
+text and linguistics analysis encourages researches to participate in
+the analysis to understand more about available rich data. Personality
+traits dimension and Social emotion tones, is based on ongoing
+research in the area of linguistics text and social analysis, and
+recently a stable accurate tools have been developed by IBM Watson
+team as part of IBM research into the social analysis to provide
+researchers with SDK to help integrate linguistic analysis into their
+research.
+
+The aim of this paper is to produce a model that can predicate server
+status based on personality traits and social emotion tones, by
+investigating the linear regression and Pearson correlation to
+identifying the key elements to be used as input for the neural
+network to build this model (Openness, Extraversion,
+Conscientiousness, Neuroticism, Joy, Sadness, Anger and Disgust). The
+produced model shows a good potential start for further data analysis,
+with 75\% accuracy in predication based on 57 test case.
+
+The outcome of the model produced encourage to investigate further
+analysis in same direction with some recommendation in future plans:
+
+\begin{itemize}
+\item Expanding the data by gathering more data from same type of interactions (Technical Quires).
+\item Divide the data by gender, and investigate the relationship
+  between gender and emotion raised by the user in different computer
+  system status.
+\item Explore different computer events not only limited to (Idle,
+  failed), but also include more computer events (account hacker,
+  system slow, unexpected error and unsaved data).
+\end{itemize}
+
 
 % \begin{acknowledgement}
 % If you want to include acknowledgments of assistance and the like at the end of an individual chapter please use the \verb|acknowledgement| environment -- it will automatically render Springer's preferred layout.
