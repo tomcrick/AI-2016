@@ -107,20 +107,25 @@ used to infer
 personality~\citep{lambiotte+kosinski:2014,oatley-et-al-soccogcomp2015}. Big
 social data offers the potential for new insights into human behaviour
 and development of robust models capable of describing individuals and
-societies~\citep{lazer-et-al:2009}. Academic research in image or
-video analysis includes promising studies on YouTube videos for
-classification of specific behaviours and indicators of personality
-traits~\citep{biel+gatica-perez:2012}. This work uses crowdsourced
-impressions, social attention, and audiovisual behavioural analysis on
-slices of conversational video blogs extracted from YouTube.
+societies~\citep{lazer-et-al:2009}. Social media has been used in
+varying computer system approaches; in the past this has mainly been
+the textual information contained in blogs, status posts and photo
+comments~\cite{blamey-et-al-2012,blamey-et-al-2013}, but there is also
+a wealth of information in the other ways of interacting with online
+artefacts. From sharing and gathering of information and data, to
+catering for marketing and business needs; it is now widely used as
+technical support for computer system platforms.
 
-Social media has been used in varying computer system approaches,
-varying from sharing and gathering of information and data, to
-catering for marketing and business needs. Furthermore, it is also
-widely used as technical support for computer system platforms;
-according to a survey in 2009~\citep{thompson:2009}, more than 60\%,
-agrees with the statement that social media have been used as a
-technical support for posting technical issues for computer system.
+% according to a survey in 2009~\citep{thompson:2009}, more than 60\%,
+% agrees with the statement that social media have been used as a
+% technical support for posting technical issues for computer system.
+
+% Academic research in image or
+% video analysis includes promising studies on YouTube videos for
+% classification of specific behaviours and indicators of personality
+% traits~\citep{biel+gatica-perez:2012}. This work uses crowdsourced
+% impressions, social attention, and audiovisual behavioural analysis on
+% slices of conversational video blogs extracted from YouTube.
 
 % \begin{figure}[!ht]
 % \centering
@@ -130,28 +135,30 @@ technical support for posting technical issues for computer system.
 % \end{figure}
 % (see Figure~\ref{fig:socialmediause}
 
-The work presented in this paper is based on psycholinguistic science
-and aims to understand whether the words and constructs we use in our
-daily life reflect our personalities and our underlying
-emotions. Psycholinguistics (or psychology of language) is the study
-of the psychological and neurobiological factors that enable humans to
-acquire, use, comprehend and produce language.  As part of this active
-research field, it is widely accepted that written text reflects more
-than the words and syntactic constructs, but also conveys emotion and
-personality traits~\citep{pennebaker+king:1999}. As part of the work
-presented, the IBM Watson Tone Analyzer has been used to identify
-emotion tones in the textual interactions in an online system,
-building on previous work in this area that shows a strong correlation
-between the word choice and personality, emotions, attitude and
-cognitive processes, providing further evidence that it is possible to
-profile and potentially predict users’
-identity~\citep{fast+funder:2008}. The {\emph{Linguistic Inquiry and
-Word Count}} (LIWC) psycholinguistics
-dictionary~\citep{pennebaker-et-al:2001,tausczik+pennebaker:2010}.
-LIWC is used to find psychologically meaningful word categories from
-word usage in writing; the work presented here provides a modelling
-and analysis framework, as well as associated toolchain, for further
-application to larger datasets.
+The work presented in this paper is building upon previous work in
+psycholinguistic science (the study of the psychological and
+neurobiological factors that enable humans to acquire, use, comprehend
+and produce language) and aims to provide further insight into how the
+words and constructs we use in our daily life and online interactions
+reflect our personalities and our underlying emotions. As part of this
+active research field, it is widely accepted that written text
+reflects more than the words and syntactic constructs, but also
+conveys emotion and personality
+traits~\citep{pennebaker+king:1999}. As part of our work, the IBM
+Watson Tone Analyzer (part of the IBM Watson Developer Cloud
+toolchain) has been used to identify emotion tones in the textual
+interactions in an online system, building on previous work in this
+area that shows a strong correlation between the word choice and
+personality, emotions, attitude and cognitive processes, providing
+further evidence that it is possible to profile and potentially
+predict users’ identity~\citep{fast+funder:2008}. The
+{\emph{Linguistic Inquiry and Word Count}} (LIWC) psycholinguistics
+dictionary~\citep{pennebaker-et-al:2001,tausczik+pennebaker:2010} is
+used to find psychologically meaningful word categories from word
+usage in writing; the work presented here provides a modelling and
+analysis framework, as well as associated toolchain, for further
+application to larger datasets to support the research goal of
+improving user-centered modelling.
 
 
 \section{Personality Insight}\label{personality}
@@ -159,21 +166,21 @@ application to larger datasets.
 Numerous studies have suggested key words and phrases can signal
 underlying tendencies and that this can form the basis of identifying
 certain aspects of
-personality~\citep{woodworth-et-al:2012,iacobelli-et-al:2011,pennebaker+king:1999,oberlander+gill:2004,oberlander+gill:2006}.
+personality~\citep{iacobelli-et-al:2011,pennebaker+king:1999,oberlander+gill:2004,oberlander+gill:2006}.
 \citet{scherer:1984} introduced a valuable classification with the
 following distinctions between emotions, moods, interpersonal stances,
-attitudes and personality traits:
+attitudes and personality traits.
 
-\begin{itemize}
-\item {\emph{Emotion:}} short-lived, for instance being angry, sad, or joyful;
-\item {\emph{Mood:}} longer-lived, low-intensity for instance being cheerful or gloomy;
-\item {\emph{Interpersonal stances:}} duration linked to specific
-  interaction, for instance friendly or supportive;
-\item {\emph{Attitudes:}} long-lived linked to specific people or
-  events, for instance loving and hating;
-\item {\emph{Personality traits:}} stable personality dispositions and
-  typical behaviour tendencies, for instance nervous, anxious, or hostile.
-\end{itemize}
+% \begin{itemize}
+% \item {\emph{Emotion:}} short-lived, for instance being angry, sad, or joyful;
+% \item {\emph{Mood:}} longer-lived, low-intensity for instance being cheerful or gloomy;
+% \item {\emph{Interpersonal stances:}} duration linked to specific
+%   interaction, for instance friendly or supportive;
+% \item {\emph{Attitudes:}} long-lived linked to specific people or
+%   events, for instance loving and hating;
+% \item {\emph{Personality traits:}} stable personality dispositions and
+%   typical behaviour tendencies, for instance nervous, anxious, or hostile.
+% \end{itemize}
 
 By observing the occurrences of words that related to these five
 categories, we can conclude to certain degrees about the holder's
@@ -181,16 +188,15 @@ psychological state. For instance, we have sentiment analysis or
 opinion mining at one end of the spectrum, by utilising open-source
 software such as {\emph{SentiWordNet}}; at the other end of the
 spectrum we have \citet{mairesse-et-al:2007} highlighting the use of
-features from psycholinguistic databases
-{\emph{LIWC}}~\citep{pennebaker-et-al:2001} and
-{\emph{MRC}}~\citep{wilson:1988} to create a range of statistical
-models for each of the Five-Factor personality traits. This ``Big
-Five'' model, focuses on five dimensions, namely:
-{\emph{Agreeableness}} to other people, {\emph{Conscientiousness}},
-{\emph{Extraversion}}, {\emph{Neuroticism}} and {\emph{Openness}} to
-experience~\citep{norman:1963,peabody+goldberg:1989}. It should be
-noted that while researchers have continued to work with the Five
-Factors model, there are well known
+features from psycholinguistic databases such as
+{\emph{LIWC}}~\citep{pennebaker-et-al:2001} to create a range of
+statistical models for each of the Five Factor personality
+traits. This ``Big Five'' model, focuses on five dimensions, namely:
+{\emph{Agreeableness}}, {\emph{Conscientiousness}},
+{\emph{Extraversion}}, {\emph{Neuroticism}} and
+{\emph{Openness}}e~\citep{norman:1963,peabody+goldberg:1989}. It
+should be noted that while researchers have continued to work with the
+Five Factors model, there are well known
 limitations~\cite{eysenck:1992,paunonen+jackson:2000,block:2010} that
 are often overlooked; however, over the past 50 years the Five Factor
 model has become a standard in psychology~\cite{mairesse-et-al:2007},
@@ -214,35 +220,35 @@ developing a large body of research for comparison.
 
 The IBM Watson Tone
 Analyzer\footnote{\url{http://www.ibm.com/watson/developercloud/tone-analyzer.html}}
-(part of the IBM Watson Developer Cloud) is an ensemble framework to
-infer emotions from a given text; it uses linguistic analysis to
-detect three types of tones from written text: emotions, social
-tendencies, and writing style. Emotions identified include
-{\emph{anger}}, {\emph{fear}}, {\emph{joy}}, {\emph{sadness}} and
-{\emph{disgust}}; identified social tendencies include the Big Five
-personality traits (as described above); identified writing styles
-include {\emph{confident}}, {\emph{analytical}} and
-{\emph{tentative}}. To derive emotion scores from text, IBM Watson Tone Analyzer uses a
-stacked generalisation-based ensemble framework to achieve greater
-predictive accuracy~\citep{costa+mccrae:1992}.  Features such as
-n-grams (unigrams, bigrams and trigrams), punctuation, emoticons,
-curse words, greeting words (such as ``{\emph{hello}}'',
-``{\emph{hi}}'' and ``{\emph{thanks}}'') and sentiment polarity are
-fed into machine learning algorithms to classify emotion
+is a cloud-based framework to infer emotions from a given text; it
+uses linguistic analysis to detect three types of tones from written
+text: emotions, social tendencies, and writing style. Emotions
+identified include {\emph{Anger}}, {\emph{Fear}}, {\emph{Joy}},
+{\emph{Sadness}} and {\emph{Disgust}}; identified social tendencies
+include the Big Five personality traits (as described above);
+identified writing styles include {\emph{Confident}},
+{\emph{Analytical}} and {\emph{Tentative}}. To derive emotion scores
+from text, IBM Watson Tone Analyzer uses a stacked
+generalisation-based ensemble framework to achieve greater predictive
+accuracy~\citep{costa+mccrae:1992}.  Features such as n-grams
+(unigrams, bigrams and trigrams), punctuation, emoticons, curse words,
+greeting words (such as ``{\emph{hello}}'', ``{\emph{hi}}'' and
+``{\emph{thanks}}'') and sentiment polarity are fed into machine
+learning algorithms to classify emotion
 categories~\citep{fellbaum:2006}. LIWC is used to find psychologically
-meaningful word categories from word usage in writing. 
+meaningful word categories from word usage in writing.
 
 IBM Watson Personality
 Insights\footnote{\url{http://www.ibm.com/watson/developercloud/personality-insights.html}}
-(again, part of the IBM Watson Developer Cloud) provides a deeper
-understanding of people's personality characteristics, needs, and
-values to drive personalisation. It extracts and analyses a spectrum
-of personality attributes to help discover actionable insights about
-people and entities; the service outputs personality characteristics
-that are divided into three dimensions: the Big Five, {\emph{values}}
-and {\emph{needs}}. While some services are contextually specific
-depending on the domain model and content, Personality Insights
-usually only requires a minimum of 3500+ words of any text.
+provides a deeper understanding of people's personality
+characteristics, needs, and values to drive personalisation. It
+extracts and analyses a spectrum of personality attributes to help
+discover actionable insights about people and entities; the service
+outputs personality characteristics that are divided into three
+dimensions: the Big Five, {\emph{Values}} and {\emph{Needs}}. While
+some services are contextually specific depending on the domain model
+and content, Personality Insights usually only requires a minimum of
+3500+ words of any text.
 
 
 \section{Data Analysis \& Feature Extraction}
@@ -263,7 +269,7 @@ to identify the server's status and categorised the status as two
 stages: {\emph{Idle}, where the system had a higher number of active
 sessions; and marked as {\emph{Failure}}, where the system had a lower
 number of sessions engaged. Figure~\ref{fig:googleanalytics} provides
-am example graph of Google Analytics web traffic over one day, clearly
+am example plot of web traffic from Google Analytics over one day, clearly
 showing the drop at 20:00 where the system had been identified as in
 the {\emph{Failure}} state.
 
@@ -283,10 +289,10 @@ time. Figure~\ref{fig:emotiontone} shows the relationship between the
 server behaviour and emotions of the users; in the system,
 {\emph{Failure}} status shows a significant difference in overall
 {\emph{Anger}} in different status; furthermore, the {\emph{Joy}}
-parameter shows a significate difference with the system in
+parameter shows a significant difference with the system in
 {\emph{Idle}} and {\emph{failure}} status. However {\emph{Fear}} and
-{\emph{Sadness}} parameters is almost the same, even with the system
-{\emph{Idle}}.
+{\emph{Sadness}} parameters is almost the same, even with the system in
+{\emph{Idle}} status.
 
 \begin{figure}[!ht]
 \centering
@@ -299,7 +305,7 @@ We identified the user's personality based on analysis of their
 Facebook interactions (by collecting all comments from user), again by
 using the IBM Watson Personality Insights tool. However,
 a number of users in the dataset had completed the Big Five
-questionnaire (n=44); in these instances, their Big Five values have
+questionnaire (n=44); in these instances, their Big Five scores have
 been used instead. The second stage involved grouping the comments
 based on server status and segmenting these interactions by user; this
 allowed us to investigate the impact of server status in the emotion
@@ -356,7 +362,7 @@ traits, social emotion tones and server status.
 
 \subsection{Statistical Analysis}
 
-As part of modelling the user’s responsive behaviour, one of the
+As part of modelling the user's responsive behaviour, one of the
 approaches to build a conceptual framework model is to apply linear
 regression to investigate the relationship between the Big Five
 personality dimensions and the emotion tones features.
@@ -414,8 +420,8 @@ sadness    & -0.226                & -2.118                & 0.035              
 \label{tbl:linreg}
 \end{table}
 
-The linear regression (see Figure~\ref{fig:scatterplots} and
-Table~\ref{tbl:linreg}) does not show significant correlations
+The linear regression (see Table~\ref{tbl:linreg} and
+Figure~\ref{fig:scatterplots}) does not show significant correlations
 between the Big Five dimensions and the social emotion tones; however,
 certain correlations can be highlighted and used as key elements for
 the model at this stage. The correlation of {\emph{Openness} and
@@ -518,7 +524,7 @@ dataset.
 
 \section{Conclusions and Future Work}\label{conclusions}
 
-This paper presents preliminary results from a large ongoing theme of
+This paper presents preliminary results from a larger ongoing theme of
 research to profile online/digital
 behaviour~\citep{oatley+crick:2014,oatley-et-al_dasc2015}, which could
 provide the conceptual framework to improve user experience and
@@ -554,7 +560,8 @@ Watson Tone Analyzer and IBM Watson Personality Insights tools),
 provide significant further opportunities to integrate linguistic
 analysis into this research domain. The outcome of the model produced
 during this work provides the following recommendations for future
-research:
+research to further incorporate emotion and personality-based analysis
+in user-centered modelling:
 
 \begin{itemize}
 \item Expanding the dataset by gathering more data from similar types
