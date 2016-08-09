@@ -63,8 +63,7 @@ Murdoch University, Australia;\\\email{g.oatley@murdoch.edu.au}}
 \maketitle
 
 \abstract{Understanding complex user behaviour under various
-conditions, scenarios and journeys can be fundamental to the
-improvement of the user-experience for a given system. Predictive
+conditions, scenarios and journeys is fundamental to improving the user-experience for a given system. Predictive
 models of user reactions, responses -- and in particular, emotions --
 can aid in the design of more intuitive and usable systems. Building
 on this theme, the preliminary research presented in this paper
@@ -118,7 +117,7 @@ artefacts. From sharing and gathering of information and data, to
 catering for marketing and business needs; it is now widely used as
 technical support for computer system platforms.
 
-The work presented in this paper is building upon previous work in
+The work presented in this paper is builds upon previous work in
 psycholinguistic science and aims to provide further insight into how
 the words and constructs we use in our daily life and online
 interactions reflect our personalities and our underlying emotions. As
@@ -151,7 +150,7 @@ improving user-centered modelling.
 % \ref{futurework} we highlight the conclusions and main contributions
 % of this paper, as well as clear recommendations for future research.
 
-\section{Personality Insight}\label{personality}
+%\section{Personality Insight}\label{personality}
 
 Numerous studies have suggested key words and phrases can signal
 underlying tendencies and that this can form the basis of identifying
@@ -159,43 +158,18 @@ certain aspects of
 personality~\citep{iacobelli-et-al:2011,pennebaker+king:1999,oberlander+gill:2004,oberlander+gill:2006}.
 \citet{scherer:1984} introduced a valuable classification with the
 following distinctions between emotions, moods, interpersonal stances,
-attitudes and personality traits.
-
-By observing the occurrences of words that relate to these five
-categories, we can conclude infer aspects of the holder's
-psychological state. For instance, we have sentiment analysis or
-opinion mining, utilising open-source software such as
-{\emph{SentiWordNet}}; as well as the use of features from
+attitudes and personality traits. By observing the occurrences of words that relate to these five categories, we can infer aspects of the holder's psychological state. For instance, sentiment analysis or
+opinion mining (utilising open-source software such as
+{\emph{SentiWordNet}}); as well as the use of features from
 psycholinguistic databases such as
-{\emph{LIWC}}~\citep{pennebaker-et-al:2001} to create a range of
+{\emph{LIWC}}~\citep{pennebaker-et-al:2001} can be used to create a range of
 statistical models for each of the Five Factor personality
-traits~\citep{mairesse-et-al:2007}. This ``Big Five'' model, focuses
-on five dimensions, namely: {\emph{Agreeableness}},
-{\emph{Conscientiousness}}, {\emph{Extraversion}},
-{\emph{Neuroticism}} and
-{\emph{Openness}}~\citep{norman:1963,peabody+goldberg:1989}. It
-should be noted that while researchers have continued to work with the
-Five Factors model, there are well known
-limitations~\cite{eysenck:1992,paunonen+jackson:2000,block:2010} that
-are often overlooked; however, over the past fifty years the Five Factor
-model has become a standard in psychology~\cite{mairesse-et-al:2007},
-developing a large corpus of work to compare against.
+traits~\citep{mairesse-et-al:2007}. 
 
-The IBM Watson Tone
-Analyzer\footnote{\url{http://www.ibm.com/watson/developercloud/tone-analyzer.html}}
-is a cloud-based framework to infer emotions from a given text; it
-uses linguistic analysis to detect three types of tones from written
-text: emotions, social tendencies, and writing style. Emotions
-identified include {\emph{Anger}}, {\emph{Fear}}, {\emph{Joy}},
-{\emph{Sadness}} and {\emph{Disgust}}; identified social tendencies
-include the Big Five personality traits (as described above);
-identified writing styles include {\emph{Confident}},
-{\emph{Analytical}} and {\emph{Tentative}}. To derive emotion scores
-from text, IBM Watson Tone Analyzer uses a stacked
-generalisation-based ensemble framework using machine learning
-techniques to achieve greater predictive
-accuracy~\citep{costa+mccrae:1992}. LIWC is used to find
-psychologically meaningful word categories from word usage in writing.
+%The ``Big Five'' model, focuses on five dimensions, namely: {\emph{Agreeableness}}, {\emph{Conscientiousness}}, {\emph{Extraversion}}, {\emph{Neuroticism}} and {\emph{Openness}}~\citep{norman:1963,peabody+goldberg:1989}. It should be noted that while researchers have continued to work with the Five Factors model, there are well known limitations~\cite{eysenck:1992,paunonen+jackson:2000,block:2010} that are often overlooked; however, over the past fifty years the Five Factor model has become a standard in psychology~\cite{mairesse-et-al:2007}, developing a large corpus of work to compare against.
+
+% The IBM Watson Tone
+%Analyzer\footnote{\url{http://www.ibm.com/watson/developercloud/tone-analyzer.html}} is a cloud-based framework to infer emotions from a given text; it uses linguistic analysis to detect three types of tones from written text: emotions, social tendencies, and writing style. Emotions identified include {\emph{Anger}}, {\emph{Fear}}, {\emph{Joy}},{\emph{Sadness}} and {\emph{Disgust}}; identified social tendencies include the Big Five personality traits (as described above); identified writing styles include {\emph{Confident}}, {\emph{Analytical}} and {\emph{Tentative}}. To derive emotion scores from text, IBM Watson Tone Analyzer uses a stacked generalisation-based ensemble framework using machine learning techniques to achieve greater predictive  accuracy~\citep{costa+mccrae:1992}. LIWC is used to find psychologically meaningful word categories from word usage in writing.
 
 % Features such as n-grams (unigrams, bigrams and trigrams),
 % punctuation, emoticons, curse words, greeting words (such as
@@ -203,30 +177,17 @@ psychologically meaningful word categories from word usage in writing.
 % sentiment polarity are fed into machine learning algorithms to
 % classify emotion categories~\citep{fellbaum:2006}.
 
-IBM Watson Personality
-Insights\footnote{\url{http://www.ibm.com/watson/developercloud/personality-insights.html}}
-provides a deeper understanding of people's personality
-characteristics, needs, and values to drive personalisation. It
-extracts and analyses a spectrum of personality attributes to help
-discover actionable insights about people and entities; the service
-outputs personality characteristics that are divided into three
-dimensions: the Big Five, {\emph{Values}} and {\emph{Needs}}. While
-some services are contextually specific depending on the domain model
-and content, Personality Insights usually only requires a minimum of
-3500+ words of any text.
+%IBM Watson Personality Insights\footnote{\url{http://www.ibm.com/watson/developercloud personality-insights.html}} provides a deeper understanding of people's personality characteristics, needs, and values to drive personalisation. It extracts and analyses a spectrum of personality attributes to help discover actionable insights about people and entities; the service outputs personality characteristics that are divided into three  dimensions: the Big Five, {\emph{Values}} and {\emph{Needs}}. While some services are contextually specific depending on the domain model and content, Personality Insights usually only requires a minimum of 3500+ words of any text.
 
 
 \section{Data Analysis \& Feature Extraction}\label{dataanalysis}
 
 \subsection{Overview of the Data}
-
 Our dataset comes from an online portal for a European Union 
 international scholarship mobility hosted at a UK university. The
 dataset was generated from interactions between users and a complex
 online information system, namely the online portal for submitting
-applications.
-
-The whole dataset consists of users (n=391), interactions and comments
+applications. The whole dataset consists of users (n=391), interactions and comments
 (n=1390) as responses to system status and reporting their experience
 with using the system. Google Analytics has been used to track user behaviour
 and web statistics (such as impressions); this data from has been used
@@ -248,18 +209,21 @@ number of sessions engaged.
 % \label{fig:googleanalytics} 
 % \end{figure}
 
-All interactions had been collected and grouped by server status, then
-sent to the IBM Watson Tone Analyzer to generate the emotion social
-tone scores, to provide an overview of the system behaviour and user’s
-interaction with Facebook at the same time. We attempt to identify the
-relationship between the server behaviour and emotions of the users in
-the system; {\emph{Failure}} status shows a significant difference in
+Interactions were first grouped by server status, then
+sent to the IBM Watson Tone Analyzer \footnote{\url{http://www.ibm.com/watson/developercloud/tone-analyzer.html}} to generate emotion social
+tone scores. In what follows {\emph{Failure}} status shows a significant difference in
 overall {\emph{Anger}} in different status; furthermore, the
 {\emph{Joy}} parameter shows a significant difference with the system
 in {\emph{Idle}} and {\emph{Failure}} status. However {\emph{Fear}}
 and {\emph{Sadness}} parameters is almost the same, even with the
-system in {\emph{Idle}} status.
+system in {\emph{Idle}} status. 
 
+
+% Features such as n-grams (unigrams, bigrams and trigrams),
+% punctuation, emoticons, curse words, greeting words (such as
+% ``{\emph{hello}}'', ``{\emph{hi}}'' and ``{\emph{thanks}}'') and
+% sentiment polarity are fed into machine learning algorithms to
+% classify emotion categories~\citep{fellbaum:2006}.
 % \begin{figure}[!ht]
 % \centering
 % \includegraphics[width=\columnwidth]{images/emotiontone}
@@ -269,7 +233,7 @@ system in {\emph{Idle}} status.
 
 We identified the user's personality based on analysis of their
 Facebook interactions, namely by collecting all comments from the
-users, again using the IBM Watson Personality Insights tool. However,
+users, again using the IBM Watson Personality Insights\footnote{\url{http://www.ibm.com/watson/developercloud personality-insights.html}} tool. However,
 a number of users in the dataset had completed the Big Five
 questionnaire (n=44); for these users, their Big Five scores have
 been used instead. The second stage involved grouping the comments
@@ -279,18 +243,15 @@ of the user and investigate the Big Five dimension as a constant
 parameter. By investigating the relationship between personality trait
 dimensions and the social emotion tones, we are able to find the
 highest correlation to identify the key elements of the potential
-model by applying linear regression and Pearson correlation. This will
-allow building of a neural network multilayer perception using the
+model by applying linear regression and Pearson correlation. This
+allowed building of a neural network multilayer perception using the
 potential key elements with higher correlations.
 
-The previous overview encourages further investigation to understand
-the relationship between user's behaviour and complex computer system
-behaviours. The data collected from the social media interactions have
-been grouped by users and using the IBM Watson Personality Insights,
+The data collected from the social media interactions was grouped by users and (via IBM Watson Personality Insights),
 we were able to identify the Big Five personality traits for each
-user. Using the IBM Watson Tone Analyzer, the data has been grouped by
+user. Using the IBM Watson Tone Analyzer, the data was grouped by
 user's comments and server status ({\emph{Failure}}, {\emph{Idle}}) to
-identify social emotion tone for each user. 
+identify the social emotion tone for each user. 
 
 % Table~\ref{tab:sample}
 % shows a sample of data used in this analysis, with each row
@@ -328,12 +289,11 @@ identify social emotion tone for each user.
 % \label{tab:sample}
 % \end{table}
 
-\subsection{Statistical Analysis}
+\subsection{Statistical Analysis and Key Elements of Model}
 
-As part of modelling the users' responses and behaviour, one of the
-approaches to building a conceptual framework model is to apply linear
+As part of modelling the users' responses and behaviour, in order to build a conceptual framework model, we applied linear
 regression to investigate the relationship between the Big Five
-personality dimensions and the emotion tones features.
+personality dimensions and the emotion tones.
 
 
 \begin{figure}[!ht]
@@ -388,21 +348,19 @@ sadness    & -0.226                & -2.118                & 0.035              
 \label{tbl:linreg}
 \end{table}
 
-During the analysis, the linear regressions (presented in Table~\ref{tbl:linreg} and
+Linear regressions (presented in Table~\ref{tbl:linreg} and
 Figure~\ref{fig:scatterplots}) do not show significant correlations
-between the Big Five dimensions and the social emotion tones; however,
-certain correlations can be highlighted and used as key elements for
-the model at this stage. The correlation of {\emph{Openness} and
-{\emph{Disgust}}, is 0.479; the correlation of {\emph{Extraversion}}
-and {\emph{Joy}} is 0.446 with p-value of
-zero. {\emph{Conscientiousness}} and {\emph{Joy}} with 0.436
-correlation and \emph{Disgust}} with 0.255. {\emph{Agreeableness}},
+between the Big Five dimensions and the social emotion tones. There are, however correlations that can be used as key elements for
+the model; namely the correlation of {\emph{Openness} and
+{\emph{Disgust}} (0.479),{\emph{Extraversion}}
+and {\emph{Joy}} (0.446 with p-value of
+0), {\emph{Conscientiousness}} and {\emph{Joy}} (0.436),and  \emph{Disgust}} with 0.255.{\emph{Agreeableness}},
 does not appear to have a high impact in the social emotion
 parameters, with the highest correlation being 0.188 with
 {\emph{Joy}}, which can be overlooked as a useful factor in the
 model. {\emph{Neuroticism}} and {\emph{Disgust} is -0.363, {\emph{Joy}
 is -0.487 and p-value is zero is both cases; and {\emph{Sadness}} with
-0.233. All correlation values are $<$0.5; however, it is noticed that
+0.233. All correlation values are $<$0.5. However,
 {\emph{Agreeableness}} does not have a linear relationship with any of
 the social emotion tones. Furthermore, the social emotion tones that
 have a potential linear relationship are {\emph{Disgust}},
@@ -415,7 +373,7 @@ Five dimensions ({\emph{Openness}}, {\emph{Extraversion}},
 correlation with the social emotion tones ({\emph{Joy}},
 {\emph{Sadness}} and {\emph{Disgust}}). For further analysis, the
 Pearson correlation for the same dataset has been performed to compare
-the output with the linear regression correlations. As you can see in
+the output with the linear regression correlations. As noted in
 Table~\ref{tab:pearson}, there is no significant correlation in both;
 however, in the Pearson correlation, {\emph{Neuroticism}} has the
 highest correlation values across emotion tones, especially
@@ -445,7 +403,7 @@ Neuroticism       & 0.375  & -0.037  & 0.153  & -0.488 & 0.379   \\
 \end{table}
 
 
-\section{Key Elements of the Model}\label{model}
+%\section{Key Elements of the Model}\label{model}
 
 According to the output of the statistical analysis presented in
 Table~\ref{tbl:linreg} (linear regression) and Table~\ref{tab:pearson}
@@ -491,21 +449,12 @@ analysis and research to exploit the full dataset.
 
 \section{Conclusions and Future Work}\label{conclusions}
 
-This paper presents preliminary results from a larger ongoing theme of
-research to profile online/digital
-behaviour~\citep{oatley+crick:2014,oatley-et-al_dasc2015}, which could
-provide the conceptual framework to improve user experience and
-computer system architecture design. We are also interested in
-profiling complex behaviours and psychopathies using social network
-analysis, particularly for crime
-informatics~\cite{oatley+crick:2015}. Previous work in this space
-analysed the document uploading behaviour (such as motivation letters,
-and social media interactions) of the applicants of the international
-scholarship mobility portal; by examining the upload footprint for the
-users we were able to determine several classes of
-behaviour~\citep{oatley-et-al-soccogcomp2015}.
 
-Social media is now not only being used as a content and sharing
+%Ana: I think we perhaps leave this out, as Mo's research should stand on its own merit, rather than linking it to all the work Giles is doing/has done. It's more concerned with social media I think,so the second paragraph seems more useful, and we can always include this in a full version.
+
+%Preliminary results from a larger ongoing theme of research to profile online/digital behaviour~\citep{oatley+crick:2014,oatley-et-al_dasc2015} were presented; the objective is to build a conceptual framework to improve user experience and computer system architecture design. The research also concerns aplicability in interested in profiling complex behaviours and psychopathies using social network analysis, particularly for crime informatics~\cite{oatley+crick:2015}. Previous work in this space analysed the document uploading behaviour (such as motivation letters, and social media interactions) of the applicants of the internationalscholarship mobility portal; by examining the upload footprint for the users we were able to determine several classes of behaviour~\citep{oatley-et-al-soccogcomp2015}.\end{comment}
+
+Social media is used, not only as a content and sharing
 platform, but also as a platform for technical support for various of
 online applications and services. This paper demonstrates the analysis
 of one such online application that has used Facebook as technical
@@ -522,7 +471,7 @@ available of high-quality, low-cost and adaptable tools provided by
 the IBM Watson Developer Cloud (e.g. IBM Watson Tone Analyzer and IBM
 Watson Personality Insights tools), provide significant further
 opportunities to integrate linguistic analysis into this research
-domain. The outcome of the model produced during this work provides
+domain. The model produced from this work provides
 the following recommendations for future research to further
 incorporate emotion and personality-based analysis in user-centered
 modelling:
