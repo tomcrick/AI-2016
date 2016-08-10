@@ -252,39 +252,94 @@ psychology~\cite{mairesse-et-al:2007}, developing a large corpus of
 work to compare against.
 
 
-\section{Tools}\label{tools}
+\section{IBM Watson Developer Cloud Tools}\label{tools}
+
+The IBM Watson Developer
+Cloud\footnote{\url{http://www.ibm.com/watson/developercloud/}} offers
+a variety of services across language, speech, vision and data insight
+for developing cognitive applications; each Watson service provides a
+REST API for interacting with the service. In this paper, we have used
+two of the language services -- Tone Analyzer and Personality Insights
+-- but also includes natural language classifiers, language
+translation and retrieve and rank, a machine learning information
+retrieval tool.
+
+% see: http://www.ibm.com/watson/developercloud/doc/tone-analyzer/science.shtml
+\subsection{IBM Watson Tone Analyzer}
 
 The IBM Watson Tone
 Analyzer\footnote{\url{http://www.ibm.com/watson/developercloud/tone-analyzer.html}}
-is a cloud-based framework to infer emotions from a given text; it
-uses linguistic analysis to detect three types of tones from written
-text: emotions, social tendencies, and writing style. Emotions
-identified include {\emph{Anger}}, {\emph{Fear}}, {\emph{Joy}},
-{\emph{Sadness}} and {\emph{Disgust}}; identified social tendencies
-include the Big Five personality traits (as described above);
-identified writing styles include {\emph{Confident}},
-{\emph{Analytical}} and {\emph{Tentative}}. To derive emotion scores
-from text, IBM Watson Tone Analyzer uses a stacked
-generalisation-based ensemble framework to achieve greater predictive
-accuracy~\citep{costa+mccrae:1992}.  Features such as n-grams
-(unigrams, bigrams and trigrams), punctuation, emoticons, curse words,
-greeting words (such as ``{\emph{hello}}'', ``{\emph{hi}}'' and
-``{\emph{thanks}}'') and sentiment polarity are fed into machine
-learning algorithms to classify emotion
-categories~\citep{fellbaum:2006}. LIWC is used to find psychologically
-meaningful word categories from word usage in writing.
+is a cloud-based framework to infer emotions from a given text; its
+use cases include: personal and business communications, market
+research, self-branding and automated contact-center agents.  It uses
+linguistic analysis to detect three types of tones from written text:
+emotions, social tendencies, and writing style. Emotions identified
+include {\emph{Anger}}, {\emph{Fear}}, {\emph{Joy}}, {\emph{Sadness}}
+and {\emph{Disgust}}; identified social tendencies include the Big
+Five personality traits (as described above); identified writing
+styles include {\emph{Confident}}, {\emph{Analytical}} and
+{\emph{Tentative}}.
+
+To derive emotion scores from text, IBM Watson Tone Analyzer uses a
+stacked generalisation-based ensemble framework to achieve greater
+predictive accuracy~\citep{costa+mccrae:1992}.  Features such as
+n-grams (unigrams, bigrams and trigrams), punctuation, emoticons,
+curse words, greeting words (such as ``{\emph{hello}}'',
+``{\emph{hi}}'' and ``{\emph{thanks}}'') and sentiment polarity are
+fed into machine learning algorithms to classify emotion
+categories~\citep{fellbaum:2006}. The analysis performed by the Tone
+Analyzer service is different from sentiment and emotion
+analyses. Sentiment analysis can identify the positive and negative
+sentiments within a document or web page. The sentiments can include
+document-level sentiment, sentiment for a user-specified target,
+entity-level sentiment, and keyword-level sentiment. Emotion analysis
+can infer different categories of emotions such as joy, anger,
+disgust, sadness, and fear. The Tone Analyzer service computes
+emotional tones, in addition to social and writing style tones. LIWC
+is then used to find psychologically meaningful word categories from
+word usage in writing.
+
+% see:
+% http://www.ibm.com/watson/developercloud/doc/personality-insights/applied.shtml
+% http://www.ibm.com/watson/developercloud/doc/personality-insights/references.shtml
+\subsection{IBM Watson Personality Insights}
 
 IBM Watson Personality
 Insights\footnote{\url{http://www.ibm.com/watson/developercloud/personality-insights.html}}
 provides a deeper understanding of people's personality
 characteristics, needs, and values to drive personalisation. It
-extracts and analyses a spectrum of personality attributes to help
-discover actionable insights about people and entities; the service
-outputs personality characteristics that are divided into three
-dimensions: the Big Five, {\emph{Values}} and {\emph{Needs}}. While
-some services are contextually specific depending on the domain model
-and content, Personality Insights usually only requires a minimum of
-3500+ words of any text.
+enables applications to derive insights from social media, enterprise
+data, or other digital communications by extracting and analysing a
+spectrum of personality attributes to help discover actionable
+insights about people and entities. The service can automatically
+infer, from potentially noisy social media, portraits of individuals
+that reflect their personality characteristics.
+
+The service outputs personality characteristics that are divided into
+three dimensions: the Big Five, {\emph{Values}} and {\emph{Needs}}. As
+described in Section~\ref{personality}, the five primary (top-level)
+dimensions ({\emph{Agreeableness}}, {\emph{Conscientiousness}},
+{\emph{Extraversion}}, {\emph{Emotional Range}} and {\emph{Openness}})
+have six subdimensions, or facets, that further characterise an
+individual according to the dimension. A Personality Insights portrait
+can only be created where sufficient data of suitable quantity and
+quality is provided. Because language use varies naturally from
+document to document, a small sample of text might not be
+representative of an individual's overall language patterns. Moreover,
+different characteristics and different media converge at somewhat
+different rates. While some services are contextually specific
+depending on the domain model and content, Personality Insights
+usually only requires a minimum of 3000+ words of any text, but
+ideally reflective in nature. The percentile and sampling error
+provide normalised scores that describe the extent to which the
+author's writing exhibits a characteristic and the possible range of
+deviation. They indicate an interval in which the service has 95\%
+confidence in its results; the raw score and raw sampling error
+provide similar results.
+
+% see:
+% http://www.ibm.com/watson/developercloud/doc/personality-insights/resources/PI-Facet-Characteristics.pdf
+% http://www.ibm.com/watson/developercloud/doc/personality-insights/resources/PI-Dimension-Characteristics.pdf
 
 
 \section{Data Analysis \& Feature Extraction}\label{dataanalysis}
