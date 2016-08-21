@@ -45,7 +45,8 @@
 \title*{Incorporating Emotion and Personality-Based Analysis in User-Centered Modelling}
 % Use \titlerunning{Short Title} for an abbreviated version of
 % your contribution title if the original one is too long
-\author{Mohamed Mostafa \and Tom Crick \and Ana C. Calderon \and Giles Oatley}
+\author{Mohamed Mostafa\thanks{The original extended version of this
+    paper is available here: \protect\url{http://arxiv.org/abs/1608.03061}} \and Tom Crick \and Ana C. Calderon \and Giles Oatley}
 % Use \authorrunning{Short Title} for an abbreviated version of
 % your contribution title if the original one is too long
 \institute{Mohamed Mostafa \and Tom Crick \and Ana C. Calderon \at
@@ -63,19 +64,19 @@ Murdoch University, Australia;\\\email{g.oatley@murdoch.edu.au}}
 \maketitle
 
 \abstract{Understanding complex user behaviour under various
-conditions, scenarios and journeys is fundamental to improving the user-experience for a given system. Predictive
-models of user reactions, responses -- and in particular, emotions --
-can aid in the design of more intuitive and usable systems. Building
-on this theme, the preliminary research presented in this paper
-correlates events and interactions in an online social network against
-user behaviour, focusing on personality traits. Emotional context and
-tone is analysed and modelled based on varying types of sentiments
-that users express in their language using the IBM Watson Developer
-Cloud tools. The data collected in this study thus provides further
-evidence towards supporting the hypothesis that analysing and
-modelling emotions, sentiments and personality traits provides
-valuable insight into improving the user experience of complex social
-computer systems.}
+conditions, scenarios and journeys is fundamental to improving the
+user-experience for a given system.  Predictive models of user
+reactions, responses -- and in particular, emotions -- can aid in the
+design of more intuitive and usable systems. Building on this theme,
+the preliminary research presented in this paper correlates events and
+interactions in an online social network against user behaviour,
+focusing on personality traits. Emotional context and tone is analysed
+and modelled based on varying types of sentiments that users express
+in their language using the IBM Watson Developer Cloud tools. The data
+collected in this study thus provides further evidence towards
+supporting the hypothesis that analysing and modelling emotions,
+sentiments and personality traits provides valuable insight into
+improving the user experience of complex social computer systems.}
 
 % Keywords: emotions; human computer interactions; social media;
 % artificial intelligence; social analysis; affective computing.
@@ -99,19 +100,18 @@ interfaces and an improved user experience. This work can be applied
 across a range of socio-technical systems, impacting upon both
 personal and business computing.
 
+%,oatley-et-al_dasc2015,blamey-et-al-2012,blamey-et-al-2013}. 
+%,oatley-et-al-soccogcomp2015}. Big social data offers the potential for new insights into human behaviour
 We are particularly interested in the relationship between digital
-footprint and behaviour and
-personality e.g.~\citep{oatley+crick:2014}%,oatley-et-al_dasc2015,blamey-et-al-2012,blamey-et-al-2013}. 
-. A wide range of pervasive and often publicly available datasets
+footprint and behaviour and personality~\citep{oatley+crick:2014}. A
+wide range of pervasive and often publicly available datasets
 encompassing digital footprints, such as social media activity, can be
-used to infer
-personality e.g.~\citep{lambiotte+kosinski:2014}%,oatley-et-al-soccogcomp2015}. Big social data offers the potential for new insights into human behaviour
-and development of robust models capable of describing individuals and
+used to infer personality~\citep{lambiotte+kosinski:2014} and
+development of robust models capable of describing individuals and
 societies~\citep{lazer-et-al:2009}. Social media has been used in
 varying computer system approaches; in the past this has mainly been
 the textual information contained in blogs, status posts and photo
-commentse.g. ~\cite{blamey-et-al-2012} %,blamey-et-al-2013}
-, but there is also
+comments~\cite{blamey-et-al-2012}, but there is also
 a wealth of information in the other ways of interacting with online
 artefacts. From sharing and gathering of information and data, to
 catering for marketing and business needs; it is now widely used as
@@ -133,14 +133,14 @@ personality, emotions, attitude and cognitive processes, providing
 further evidence that it is possible to profile and potentially
 predict users’ identity~\citep{fast+funder:2008}. The
 {\emph{Linguistic Inquiry and Word Count}} (LIWC) psycholinguistics
-dictionary~\citep{pennebaker-et-al:2001,tausczik+pennebaker:2010} is
+dictionary~\citep{tausczik+pennebaker:2010} is
 used to find psychologically meaningful word categories from word
 usage in writing; the work presented here provides a modelling and
 analysis framework, as well as associated toolchain, for further
 application to larger datasets to support the research goal of
 improving user-centered modelling.
 
-%%% FIX AT THE END %%%
+%%% FINALISE AT THE END %%%
 
 % The paper is structured as follows: in Section~\ref{personality} we
 % give an overview of how insight into personality can be inferred from
@@ -171,18 +171,26 @@ improving user-centered modelling.
 \section{Data Analysis \& Feature Extraction}\label{dataanalysis}
 
 %\subsection{Overview of the Data}
-Our dataset comes from an online portal for a European Union 
+Our dataset comes from an online portal for a European Union
 international scholarship mobility hosted at a UK university. The
 dataset was generated from interactions between users and a complex
 online information system, namely the online portal for submitting
-applications. The whole dataset consists of users (n=391), interactions and comments
-(n=1390) as responses to system status and reporting their experience
-with using the system. Google Analytics has been used to track user behaviour
-and web statistics (such as impressions); this data from has been used
-to identify the server's status and categorised the status as two
-stages: {\emph{Idle}, where the system had a higher number of active
-sessions; and marked as {\emph{Failure}}, where the system had a lower
-number of sessions engaged. 
+applications. The whole dataset consists of users (N=391),
+interactions and comments (N=1390) as responses to system status and
+reporting their experience with using the system. Google Analytics has
+been used to track user behaviour and web statistics (such as
+impressions); this data from has been used to identify the server's
+status and categorised the status as two stages: {\emph{Idle}, where
+the system had a higher number of active sessions; and marked as
+{\emph{Failure}}, where the system had a lower number of sessions
+engaged. Interactions were first grouped by server status, then sent
+to the IBM Watson Tone Analyzer to generate emotion social tone
+scores. In what follows {\emph{Failure}} status shows a significant
+difference in overall {\emph{Anger}} in different status; furthermore,
+the {\emph{Joy}} parameter shows a significant difference with the
+system in {\emph{Idle}} and {\emph{Failure}} status. However
+{\emph{Fear}} and {\emph{Sadness}} parameters is almost the same, even
+with the system in {\emph{Idle}} status.
 
 % Figure~\ref{fig:googleanalytics} provides
 % a plot of web traffic from Google Analytics over a specific day, clearly
@@ -197,14 +205,9 @@ number of sessions engaged.
 % \label{fig:googleanalytics} 
 % \end{figure}
 
-Interactions were first grouped by server status, then
-sent to the IBM Watson Tone Analyzer \footnote{\url{http://www.ibm.com/watson/developercloud/tone-analyzer.html}} to generate emotion social
-tone scores. In what follows {\emph{Failure}} status shows a significant difference in
-overall {\emph{Anger}} in different status; furthermore, the
-{\emph{Joy}} parameter shows a significant difference with the system
-in {\emph{Idle}} and {\emph{Failure}} status. However {\emph{Fear}}
-and {\emph{Sadness}} parameters is almost the same, even with the
-system in {\emph{Idle}} status. 
+% removed footnote:
+% \footnote{\url{http://www.ibm.com/watson/developercloud/tone-analyzer.html}}
+
 
 
 % Features such as n-grams (unigrams, bigrams and trigrams),
@@ -219,11 +222,13 @@ system in {\emph{Idle}} status.
 % \label{fig:emotiontone} 
 % \end{figure}
 
+% removed footnote:
+% \footnote{\url{http://www.ibm.com/watson/developercloud personality-insights.html}}
 We identified the user's personality based on analysis of their
 Facebook interactions, namely by collecting all comments from the
-users, again using the IBM Watson Personality Insights\footnote{\url{http://www.ibm.com/watson/developercloud personality-insights.html}} tool. However,
+users, again using the IBM Watson Personality Insights tool. However,
 a number of users in the dataset had completed the Big Five
-questionnaire (n=44); for these users, their Big Five scores have
+questionnaire (N=44); for these users, their Big Five scores have
 been used instead. The second stage involved grouping the comments
 based on server status and segmenting these interactions by user; this
 allowed us to investigate the impact of server status in the emotion
@@ -235,11 +240,12 @@ model by applying linear regression and Pearson correlation. This
 allowed building of a neural network multilayer perception using the
 potential key elements with higher correlations.
 
-The data collected from the social media interactions was grouped by users and (via IBM Watson Personality Insights),
-we were able to identify the Big Five personality traits for each
-user. Using the IBM Watson Tone Analyzer, the data was grouped by
-user's comments and server status ({\emph{Failure}}, {\emph{Idle}}) to
-identify the social emotion tone for each user. 
+The data collected from the social media interactions was grouped by
+users and via IBM Watson Personality Insights, we were able to
+identify the Big Five personality traits for each user. Using the IBM
+Watson Tone Analyzer, the data was grouped by user's comments and
+server status ({\emph{Failure}}, {\emph{Idle}}) to identify the social
+emotion tone for each user.
 
 % Table~\ref{tab:sample}
 % shows a sample of data used in this analysis, with each row
@@ -279,19 +285,20 @@ identify the social emotion tone for each user.
 
 \subsection{Statistical Analysis and Key Elements of Model}
 
-As part of modelling the users' responses and behaviour, in order to build a conceptual framework model, we applied linear
-regression to investigate the relationship between the Big Five
-personality dimensions and the emotion tones.
+As part of modelling the users' responses and behaviour, in order to
+build a conceptual framework model, we applied linear regression to
+investigate the relationship between the Big Five personality
+dimensions and the emotion tones.
 
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=0.45\columnwidth]{images/opennessplot.png}
-\includegraphics[width=0.45\columnwidth]{images/extraversionplot.png}\\
-%\includegraphics[width=0.45\columnwidth]{images/conscientiousnessplot.png}
-%\includegraphics[width=0.45\columnwidth]{images/neuroticismplot.png}\\
-\includegraphics[width=0.45\columnwidth]{images/agreeablenessplot.png}
-\caption{Scatterplots of some of the Big Five dimension (dependent variables) and
+\includegraphics[width=0.25\columnwidth]{images/opennessplot.png}
+\includegraphics[width=0.25\columnwidth]{images/extraversionplot.png}
+\includegraphics[width=0.25\columnwidth]{images/conscientiousnessplot.png}
+\includegraphics[width=0.25\columnwidth]{images/neuroticismplot.png}
+\includegraphics[width=0.25\columnwidth]{images/agreeablenessplot.png}
+\caption{Scatterplots of the Big Five dimension (dependent variables) and
   social emotion tones (independent variables)}
 \label{fig:scatterplots} 
 \end{figure}
@@ -338,28 +345,28 @@ sadness    & -0.226                & -2.118                & 0.035              
 
 Linear regressions (presented in Table~\ref{tbl:linreg} and
 Figure~\ref{fig:scatterplots}) do not show significant correlations
-between the Big Five dimensions and the social emotion tones. There are, however correlations that can be used as key elements for
-the model; namely the correlation of {\emph{Openness} and
-{\emph{Disgust}} (0.479),{\emph{Extraversion}}
-and {\emph{Joy}} (0.446 with p-value of
-0), {\emph{Conscientiousness}} and {\emph{Joy}} (0.436),and  \emph{Disgust}} with 0.255.{\emph{Agreeableness}},
-does not appear to have a high impact in the social emotion
-parameters, with the highest correlation being 0.188 with
-{\emph{Joy}}, which can be overlooked as a useful factor in the
-model. {\emph{Neuroticism}} and {\emph{Disgust} is -0.363, {\emph{Joy}
-is -0.487 and p-value is zero is both cases; and {\emph{Sadness}} with
-0.233. All correlation values are $<$0.5. However,
-{\emph{Agreeableness}} does not have a linear relationship with any of
-the social emotion tones. Furthermore, the social emotion tones that
-have a potential linear relationship are {\emph{Disgust}},
-{\emph{Joy}} and {\emph{Sadness}}, since the three tones have a
-correlation between $>$0.3 and $<$0.5.
+between the Big Five dimensions and the social emotion tones. There
+are, however correlations that can be used as key elements for the
+model; namely the correlation of {\emph{Openness} and {\emph{Disgust}}
+(0.479), {\emph{Extraversion}} and {\emph{Joy}} (0.446 with p-value of
+0), {\emph{Conscientiousness}} and {\emph{Joy}} (0.436),and
+\emph{Disgust}} with 0.255.{\emph{Agreeableness}}, does not appear to
+have a high impact in the social emotion parameters, with the highest
+correlation being 0.188 with {\emph{Joy}}, which can be overlooked as
+a useful factor in the model. {\emph{Neuroticism}} and {\emph{Disgust}
+is -0.363, {\emph{Joy} is -0.487 and p-value is zero is both cases;
+and {\emph{Sadness}} with 0.233. All correlation values are
+$<$0.5. However, {\emph{Agreeableness}} does not have a linear
+relationship with any of the social emotion tones. Furthermore, the
+social emotion tones that have a potential linear relationship are
+{\emph{Disgust}}, {\emph{Joy}} and {\emph{Sadness}}, since the three
+tones have a correlation between $>$0.3 and $<$0.5.
 
 Previous linear regression analysis suggested that the following Big
-Five dimensions ({\emph{Openness}}, {\emph{Extraversion}},
-{\emph{Conscientiousness}} and {\emph{Neuroticism}}) have the highest
-correlation with the social emotion tones ({\emph{Joy}},
-{\emph{Sadness}} and {\emph{Disgust}}). For further analysis, the
+Five dimensions: {\emph{Openness}}, {\emph{Extraversion}},
+{\emph{Conscientiousness}} and {\emph{Neuroticism}} have the highest
+correlation with the social emotion tones: {\emph{Joy}},
+{\emph{Sadness}} and {\emph{Disgust}}. For further analysis, the
 Pearson correlation for the same dataset has been performed to compare
 the output with the linear regression correlations. As noted in
 Table~\ref{tab:pearson}, there is no significant correlation in both;
@@ -422,7 +429,7 @@ is between 0.3 and 0.5 which can be used as input for the model.
 % \end{table}
 
 The dataset used to build this model is based upon a number of users
-(n=391), eight inputs ({\emph{Openness}}, {\emph{Extraversion}},
+(N=391), eight inputs ({\emph{Openness}}, {\emph{Extraversion}},
 {\emph{Conscientiousness}}, {\emph{Neuroticism}}, {\emph{Joy}},
 {\emph{Sadness}}, {\emph{Anger}} and {\emph{Disgust}}) and the
 class/output variable as the server status (where No: System
@@ -438,43 +445,58 @@ analysis and research to exploit the full dataset.
 \section{Conclusions and Future Work}\label{conclusions}
 
 
-%Ana: I think we perhaps leave this out, as Mo's research should stand on its own merit, rather than linking it to all the work Giles is doing/has done. It's more concerned with social media I think,so the second paragraph seems more useful, and we can always include this in a full version.
+%Ana: I think we perhaps leave this out, as Mo's research should stand
+%on its own merit, rather than linking it to all the work Giles is
+%doing/has done. It's more concerned with social media I think,so the
+%second paragraph seems more useful, and we can always include this in
+%a full version.
+% TC: agreed, but useful for context, plus links to Mo's other paper.
 
-%Preliminary results from a larger ongoing theme of research to profile online/digital behaviour~\citep{oatley+crick:2014,oatley-et-al_dasc2015} were presented; the objective is to build a conceptual framework to improve user experience and computer system architecture design. The research also concerns aplicability in interested in profiling complex behaviours and psychopathies using social network analysis, particularly for crime informatics~\cite{oatley+crick:2015}. Previous work in this space analysed the document uploading behaviour (such as motivation letters, and social media interactions) of the applicants of the internationalscholarship mobility portal; by examining the upload footprint for the users we were able to determine several classes of behaviour~\citep{oatley-et-al-soccogcomp2015}.\end{comment}
+In this paper, preliminary results from a larger ongoing theme of
+research to profile online/digital behaviour have been
+presented\footnote{See original extended paper:
+\url{http://arxiv.org/abs/1608.03061}}; the objective is to build a
+conceptual framework to improve user experience and computer system
+architecture design. The research also concerns applicability in
+interested in profiling complex behaviours and psychopathies using
+social network analysis, particularly for crime
+informatics~\cite{oatley+crick:2015}. Previous work in this space
+analysed the document uploading behaviour (such as motivation letters,
+and social media interactions) of the applicants of the international
+scholarship mobility portal; by examining the upload footprint for the
+users we were able to determine several classes of
+behaviour~\citep{oatley-et-al-soccogcomp2015}.
 
-Social media is used, not only as a content and sharing
-platform, but also as a platform for technical support for various of
-online applications and services. This paper demonstrates the analysis
-of one such online application that has used Facebook as technical
-support platform for the users. We have produced a model that can
-predict server status based on personality traits and social emotion
-tones, by investigating the linear regression and Pearson correlation
-to identify the key elements to be used as input for the neural
-network to build this model ({\emph{Openness}}, {\emph{Extraversion}},
+Social media is used, not only as a content and sharing platform, but
+also as a platform for technical support for various of online
+applications and services. This paper demonstrates the analysis of one
+such online application that has used Facebook as technical support
+platform for the users. We have produced a model that can predict
+server status based on personality traits and social emotion tones, by
+investigating the linear regression and Pearson correlation to
+identify the key elements to be used as input for the neural network
+to build this model ({\emph{Openness}}, {\emph{Extraversion}},
 {\emph{Conscientiousness}}, {\emph{Neuroticism}}, {\emph{Joy}},
 {\emph{Sadness}}, {\emph{Anger}} and {\emph{Disgust}}). The produced
 model shows a good potential start for further data analysis, with
-75\% accuracy in predication based on 57 test case. Furthermore the
+75\% accuracy in predication based on 57 test cases. Furthermore the
 available of high-quality, low-cost and adaptable tools provided by
-the IBM Watson Developer Cloud (e.g. IBM Watson Tone Analyzer and IBM
-Watson Personality Insights tools), provide significant further
+the IBM Watson Developer Cloud, provide significant further
 opportunities to integrate linguistic analysis into this research
-domain. The model produced from this work provides
-the following recommendations for future research to further
-incorporate emotion and personality-based analysis in user-centered
-modelling:
+domain. The model produced from this work provides a number of
+recommendations for future research to further incorporate emotion and
+personality-based analysis in user-centered modelling. In particular,
+expanding the dataset by gathering more data from similar types of
+interactions, as well as technical queries; annotating and
+categorising the dataset by gender to investigate the relationship
+between gender and emotion raised by the user in different computer
+system statuses; as well as exploring different computer events not
+only limited to {\emph{Idle}} and {\emph{Failure}}, but including more
+complex events e.g. account hacked, system speed, unexpected error and
+unsaved data.
 
-\begin{itemize}
-\item Expanding the dataset by gathering more data from similar types
-of interactions, as well as technical queries;
-\item Annotate and categorise the dataset by gender to investigate the
-relationship between gender and emotion raised by the user in
-different computer system statuses;
-\item Explore different computer events not only limited to
-{\emph{Idle}} and {\emph{Failure}}, but including more complex events
-e.g. account hacked, system speed, unexpected error and unsaved data.
-\end{itemize}
-
+% (e.g. IBM Watson Tone Analyzer and IBM
+% Watson Personality Insights tools)
 
 % \begin{acknowledgement}
 % If you want to include acknowledgments of assistance and the like at the end of an individual chapter please use the \verb|acknowledgement| environment -- it will automatically render Springer's preferred layout.
