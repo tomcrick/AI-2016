@@ -22,7 +22,7 @@
 \usepackage{float}
 \urlstyle{same}
 
-\usepackage[numbers,sort]{natbib} % "sort" = "orders multiple citations into the sequence in which they 
+%\usepackage[numbers,sort]{natbib} % "sort" = "orders multiple citations into the sequence in which they 
 % appear in the list of references;"
 %\usepackage[style=numeric,sorting=none,natbib=true,backend=biber]{biblatex}
 
@@ -103,15 +103,17 @@ personal and business computing.
 %,oatley-et-al_dasc2015,blamey-et-al-2012,blamey-et-al-2013}. 
 %,oatley-et-al-soccogcomp2015}. Big social data offers the potential for new insights into human behaviour
 We are particularly interested in the relationship between digital
-footprint and behaviour and personality~\citep{oatley+crick:2014}. A
-wide range of pervasive and often publicly available datasets
-encompassing digital footprints, such as social media activity, can be
-used to infer personality~\citep{lambiotte+kosinski:2014} and
-development of robust models capable of describing individuals and
-societies~\citep{lazer-et-al:2009}. Social media has been used in
+footprint and behaviour and
+personality~\cite{oatley+crick:2014,oatley-et-al_dasc2015}. A wide
+range of pervasive and often publicly available datasets encompassing
+digital footprints, such as social media activity, can be used to
+infer
+personality~\cite{lambiotte+kosinski:2014,oatley-et-al-soccogcomp2015}
+and development of robust models capable of describing individuals and
+societies~\cite{lazer-et-al:2009}. Social media has been used in
 varying computer system approaches; in the past this has mainly been
 the textual information contained in blogs, status posts and photo
-comments~\cite{blamey-et-al-2012}, but there is also
+comments~\cite{blamey-et-al-2012,blamey-et-al-2013}, but there is also
 a wealth of information in the other ways of interacting with online
 artefacts. From sharing and gathering of information and data, to
 catering for marketing and business needs; it is now widely used as
@@ -123,32 +125,28 @@ the words and constructs we use in our daily life and online
 interactions reflect our personalities and our underlying emotions. As
 part of this active research field, it is widely accepted that written
 text reflects more than the words and syntactic constructs, but also
-conveys emotion and personality
-traits~\citep{pennebaker+king:1999}. As part of our work, the IBM
-Watson Tone Analyzer (part of the IBM Watson Developer Cloud
-toolchain) has been used to identify emotion tones in the textual
-interactions in an online system, building on previous work in this
-area that shows a strong correlation between the word choice and
-personality, emotions, attitude and cognitive processes, providing
-further evidence that it is possible to profile and potentially
-predict users’ identity~\citep{fast+funder:2008}. The
+conveys emotion and personality traits~\cite{pennebaker+king:1999}. As
+part of our work, the IBM Watson Tone Analyzer (part of the IBM Watson
+Developer Cloud toolchain) has been used to identify emotion tones in
+the textual interactions in an online system, building on previous
+work in this area that shows a strong correlation between the word
+choice and personality, emotions, attitude and cognitive processes,
+providing further evidence that it is possible to profile and
+potentially predict users’ identity~\cite{fast+funder:2008}. The
 {\emph{Linguistic Inquiry and Word Count}} (LIWC) psycholinguistics
-dictionary~\citep{tausczik+pennebaker:2010} is
+dictionary~\cite{pennebaker-et-al:2001,tausczik+pennebaker:2010} is
 used to find psychologically meaningful word categories from word
 usage in writing; the work presented here provides a modelling and
 analysis framework, as well as associated toolchain, for further
 application to larger datasets to support the research goal of
 improving user-centered modelling.
 
-%%% FINALISE AT THE END %%%
-
-% The paper is structured as follows: in Section~\ref{personality} we
-% give an overview of how insight into personality can be inferred from
-% textual data; in Section~\ref{dataanalysis} we present our data and
-% the statistical analysis; in Section~\ref{model} we identify the key
-% elements of our model and in Sections~\ref{conclusions} and
-% \ref{futurework} we highlight the conclusions and main contributions
-% of this paper, as well as clear recommendations for future research.
+The rest of the paper is structured as follows: in
+Sections~\ref{dataanalysis} and \ref{keymodels} we present our data,
+the statistical analysis and identify the key elements of our model;
+in Section~\ref{conclusions} we summarise the main contributions of
+this paper, as well as making clear recommendations for future
+research.
 
 %\section{Personality Insight}\label{personality}
 
@@ -254,6 +252,7 @@ emotion tone for each user.
 
 % \begin{table}[!ht]
 % \centering
+% \caption{Example data snapshot used in the analysis}
 % \resizebox{\columnwidth}{!}{%
 % \begin{tabular}{@{}rrrrrrrrrrr@{}}
 % \toprule
@@ -279,11 +278,10 @@ emotion tone for each user.
 % \bottomrule
 % \end{tabular}%
 % }
-% \caption{Example data snapshot used in the analysis}
 % \label{tab:sample}
 % \end{table}
 
-\subsection{Statistical Analysis and Key Elements of Model}
+\section{Statistical Analysis and Key Elements of Model}\label{keymodels}
 
 As part of modelling the users' responses and behaviour, in order to
 build a conceptual framework model, we applied linear regression to
@@ -293,11 +291,11 @@ dimensions and the emotion tones.
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=0.26\columnwidth]{images/opennessplot.png}
-\includegraphics[width=0.26\columnwidth]{images/extraversionplot.png}
-\includegraphics[width=0.26\columnwidth]{images/conscientiousnessplot.png}
-\includegraphics[width=0.26\columnwidth]{images/neuroticismplot.png}
-\includegraphics[width=0.26\columnwidth]{images/agreeablenessplot.png}
+\includegraphics[width=0.32\columnwidth]{images/opennessplot.png}
+\includegraphics[width=0.32\columnwidth]{images/extraversionplot.png}
+\includegraphics[width=0.32\columnwidth]{images/conscientiousnessplot.png}
+\includegraphics[width=0.32\columnwidth]{images/agreeablenessplot.png}
+\includegraphics[width=0.32\columnwidth]{images/neuroticismplot.png}
 \caption{Scatterplots of the Big Five dimension (dependent variables) and
   social emotion tones (independent variables)}
 \label{fig:scatterplots} 
@@ -306,8 +304,8 @@ dimensions and the emotion tones.
 
 \begin{table}[!ht]
 \centering
+\caption{Linear regression coefficients}
 \resizebox{\columnwidth}{!}{%
-
 \begin{tabular}{@{}llll|lll|lll|lll|lll@{}}
 %\begin{tabularx}{\textwidth}{llll|lll|lll|lll|lll}
 \toprule
@@ -339,7 +337,6 @@ sadness    & -0.226                & -2.118                & 0.035              
 %\end{tabularx} 
 \end{tabular}%
 }
-\caption{Linear regression coefficients}
 \label{tbl:linreg}
 \end{table}
 
@@ -381,6 +378,7 @@ analysis.
 
 \begin{table}[!ht]
 \centering
+\caption{Pearson correlations}
 \begin{tabular}{@{}rrrrrr@{}}
 \toprule
                   & \multicolumn{1}{c}{Anger}  & \multicolumn{1}{c}{Disgust} & \multicolumn{1}{c}{Fear}   & \multicolumn{1}{c}{Joy}    & \multicolumn{1}{c}{Sadness} \\ 
@@ -393,7 +391,6 @@ Neuroticism       & 0.375  & -0.037  & 0.153  & -0.488 & 0.379   \\
 
 \bottomrule
 \end{tabular}
-\caption{Pearson correlations}
 \label{tab:pearson}
 \end{table}
 
@@ -416,6 +413,7 @@ is between 0.3 and 0.5 which can be used as input for the model.
 
 % \begin{table}[!ht]
 % \centering
+% \caption{Re-evaluation output of proposed model}
 % \begin{tabular}{lrr}
 % Correctly classified instances:   & 43     & ({\emph{75.44\%}}) \\
 % Incorrectly classified instances: & 14     & ({\emph{24.56\%}}) \\
@@ -424,7 +422,6 @@ is between 0.3 and 0.5 which can be used as input for the model.
 % Root mean squared error:          & 0.4246 &         \\
 % Total number of instances:        & 57     &        
 % \end{tabular}
-% \caption{Re-evaluation output of proposed model}
 % \label{tab:reeval}
 % \end{table}
 
@@ -437,7 +434,7 @@ class/output variable as the server status (where No: System
 the instances for the testing set is 57; the output of the model shows
 a 75.44\% corrected predicted instances and 24.56\% incorrectly
 classified instances (kappa statistic: 0.5295; mean absolute error:
-0.3432; root mean squared error: 0.4246). As this has been performed
+0.3432; RMS error: 0.4246). As this has been performed
 on a small subset of the overall larger project dataset, the output
 data is encouraging and provides the infrastructure for further
 analysis and research to exploit the full dataset.
@@ -465,7 +462,7 @@ analysed the document uploading behaviour (such as motivation letters,
 and social media interactions) of the applicants of the international
 scholarship mobility portal; by examining the upload footprint for the
 users we were able to determine several classes of
-behaviour~\citep{oatley-et-al-soccogcomp2015}.
+behaviour~\cite{oatley-et-al-soccogcomp2015}.
 
 Social media is used, not only as a content and sharing platform, but
 also as a platform for technical support for various of online
@@ -511,7 +508,7 @@ unsaved data.
 
 
 % bib
-\bibliographystyle{abbrvnat}
+\bibliographystyle{spmpsci}
 \bibliography{ai2016}
 
 \end{document}
